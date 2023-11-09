@@ -2,8 +2,14 @@
   "name": "topl_common",
   "version": "1.0.0",
   "description": "A dart library that is generated according to the [Topl Protobuf specification][https://github.com/Topl/protobuf-specs]  This also includes the files required to connect over gRPC to connect to a Bifrost node to send transactions, interact with addresses and much more!",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,13 +17,18 @@
     "url": "git+https://github.com/Topl/ts_topl_common.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Topl/ts_topl_common/issues"
   },
   "homepage": "https://github.com/Topl/ts_topl_common#readme",
   "devDependencies": {
     "ts-node": "^10.9.1",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.9",
+    "google-protobuf": "^3.21.2"
   }
 }
