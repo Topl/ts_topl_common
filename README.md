@@ -1,5 +1,5 @@
 # Topl Common
-A dart library that is generated according to the [Topl Protobuf specification][https://github.com/Topl/protobuf-specs]  This also includes the files required to connect over gRPC to connect
+A TS library that is generated according to the [Topl Protobuf specification][https://github.com/Topl/protobuf-specs]  This also includes the files required to connect over gRPC to connect
 to a Bifrost node to send transactions, interact with addresses and much more!
 
 ### Features
