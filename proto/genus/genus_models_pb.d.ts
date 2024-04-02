@@ -5,6 +5,7 @@ import * as jspb from "google-protobuf";
 import * as brambl_models_address_pb from "../brambl/models/address_pb";
 import * as brambl_models_transaction_io_transaction_pb from "../brambl/models/transaction/io_transaction_pb";
 import * as brambl_models_transaction_unspent_transaction_output_pb from "../brambl/models/transaction/unspent_transaction_output_pb";
+import * as brambl_models_transaction_spent_transaction_output_pb from "../brambl/models/transaction/spent_transaction_output_pb";
 import * as consensus_models_block_id_pb from "../consensus/models/block_id_pb";
 import * as consensus_models_block_header_pb from "../consensus/models/block_header_pb";
 import * as node_models_block_pb from "../node/models/block_pb";
@@ -25,6 +26,11 @@ export class Txo extends jspb.Message {
   getOutputaddress(): brambl_models_address_pb.TransactionOutputAddress | undefined;
   setOutputaddress(value?: brambl_models_address_pb.TransactionOutputAddress): void;
 
+  hasSpender(): boolean;
+  clearSpender(): void;
+  getSpender(): Txo.Spender | undefined;
+  setSpender(value?: Txo.Spender): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Txo.AsObject;
   static toObject(includeInstance: boolean, msg: Txo): Txo.AsObject;
@@ -40,6 +46,35 @@ export namespace Txo {
     transactionoutput?: brambl_models_transaction_unspent_transaction_output_pb.UnspentTransactionOutput.AsObject,
     state: TxoStateMap[keyof TxoStateMap],
     outputaddress?: brambl_models_address_pb.TransactionOutputAddress.AsObject,
+    spender?: Txo.Spender.AsObject,
+  }
+
+  export class Spender extends jspb.Message {
+    hasInputaddress(): boolean;
+    clearInputaddress(): void;
+    getInputaddress(): brambl_models_address_pb.TransactionInputAddress | undefined;
+    setInputaddress(value?: brambl_models_address_pb.TransactionInputAddress): void;
+
+    hasInput(): boolean;
+    clearInput(): void;
+    getInput(): brambl_models_transaction_spent_transaction_output_pb.SpentTransactionOutput | undefined;
+    setInput(value?: brambl_models_transaction_spent_transaction_output_pb.SpentTransactionOutput): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Spender.AsObject;
+    static toObject(includeInstance: boolean, msg: Spender): Spender.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Spender, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Spender;
+    static deserializeBinaryFromReader(message: Spender, reader: jspb.BinaryReader): Spender;
+  }
+
+  export namespace Spender {
+    export type AsObject = {
+      inputaddress?: brambl_models_address_pb.TransactionInputAddress.AsObject,
+      input?: brambl_models_transaction_spent_transaction_output_pb.SpentTransactionOutput.AsObject,
+    }
   }
 }
 
