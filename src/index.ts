@@ -62,23 +62,25 @@ export class ImmutableBytes extends common.ImmutableBytes {}
 
 // Datum subtypes
 export class Datum extends datum.Datum {}
-export class Datum_Eon extends datum.Datum.Eon {}
-export class Datum_Era extends datum.Datum.Era {}
-export class Datum_Epoch extends datum.Datum.Epoch {}
-export class Datum_Header extends datum.Datum.Header {}
-export class Datum_IoTransaction extends datum.Datum.IoTransaction {}
-export class Datum_GroupPolicy extends datum.Datum.GroupPolicy {}
-export class Datum_SeriesPolicy extends datum.Datum.SeriesPolicy {}
+export class Datum_Eon extends datum.Datum_Eon {}
+export class Datum_Era extends datum.Datum_Era{}
+export class Datum_Epoch extends datum.Datum_Epoch {}
+export class Datum_Header extends datum.Datum_Header {}
+export class Datum_IoTransaction extends datum.Datum_IoTransaction {}
+export class Datum_GroupPolicy extends datum.Datum_GroupPolicy {}
+export class Datum_SeriesPolicy extends datum.Datum_SeriesPolicy {}
+
+
 
 // Event subtypes
 export class Event extends event.Event {}
-export class Event_Eon extends event.Event.Eon {}
-export class Event_Era extends event.Event.Era {}
-export class Event_Epoch extends event.Event.Epoch {}
-export class Event_Header extends event.Event.Header {}
-export class Event_IoTransaction extends event.Event.IoTransaction {}
-export class Event_GroupPolicy extends event.Event.GroupPolicy {}
-export class Event_SeriesPolicy extends event.Event.SeriesPolicy {}
+export class Event_Eon extends event.Event_Eon {}
+export class Event_Era extends event.Event_Era {}
+export class Event_Epoch extends event.Event_Epoch {}
+export class Event_Header extends event.Event_Header {}
+export class Event_IoTransaction extends event.Event_IoTransaction {}
+export class Event_GroupPolicy extends event.Event_GroupPolicy {}
+export class Event_SeriesPolicy extends event.Event_SeriesPolicy {}
 
 export class Evidence extends evidence.Evidence {}
 
@@ -94,32 +96,9 @@ export class SeriesId extends identifier.SeriesId {}
 
 export class Indices extends indices.Indices {}
 
-export type FungibilityTypeMapPb = asset.FungibilityTypeMap
+export type FungibilityType = asset.FungibilityType;
 
-//custom
-export const FungibilityTypeMap = {
-  GROUP_AND_SERIES: 0,
-  SERIES: 1,
-  GROUP: 2
-}
-
-//custom
-export type FungibilityType =
-  typeof FungibilityTypeMap[keyof typeof FungibilityTypeMap]
-
-export type QuantityDescriptorTypeMapPb = asset.QuantityDescriptorTypeMap
-
-//custom
-export const QuantityDescriptorTypeMap = {
-  LIQUID: 0,
-  ACCUMULATOR: 1,
-  FRACTIONABLE: 2,
-  IMMUTABLE: 3
-} as const
-
-//custom
-export type QuantityDescriptorType =
-  typeof QuantityDescriptorTypeMap[keyof typeof QuantityDescriptorTypeMap]
+export type QuantityDescriptorType = asset.QuantityDescriptorType;
 
 export class AssetMintingStatement extends assets_statements.AssetMintingStatement {}
 
@@ -129,10 +108,9 @@ export class AssetSplittingStatement extends assets_statements.AssetSplittingSta
 
 // Attestation subtypes
 export class Attestation extends attestation.Attestation {}
-export class Attestation_Predicate extends attestation.Attestation.Predicate {}
-export class Attestation_Image extends attestation.Attestation.Image {}
-export class Attestation_Commitment extends attestation.Attestation
-  .Commitment {}
+export class Attestation_Predicate extends attestation.Attestation_Predicate {}
+export class Attestation_Image extends attestation.Attestation_Image {}
+export class Attestation_Commitment extends attestation.Attestation_Commitment {}
 
 export class Box extends box.Box {}
 
@@ -140,17 +118,17 @@ export class Challenge extends challenge.Challenge {}
 
 // Lock subtypes
 export class Lock extends lock.Lock {}
-export class Lock_Predicate extends lock.Lock.Predicate {}
-export class Lock_Image extends lock.Lock.Image {}
-export class Lock_Commitment extends lock.Lock.Commitment {}
+export class Lock_Predicate extends lock.Lock_Predicate {}
+export class Lock_Image extends lock.Lock_Image {}
+export class Lock_Commitment extends lock.Lock_Commitment {}
 
 // value subtypes
 export class Value extends value.Value {}
-export class Lvl extends value.Value.LVL {}
-export class Topl extends value.Value.TOPL {}
-export class Group extends value.Value.Group {}
-export class Series extends value.Value.Series {}
-export class Asset extends value.Value.Asset {}
+export class Lvl extends value.Value_LVL {}
+export class Topl extends value.Value_TOPL {}
+export class Group extends value.Value_Group {}
+export class Series extends value.Value_Series {}
+export class Asset extends value.Value_Asset {}
 
 export class IoTransaction extends io_transaction.IoTransaction {}
 export class Schedule extends schedule.Schedule {}
@@ -173,12 +151,12 @@ export class StakingRegistration extends staking.StakingRegistration {}
 export class ActiveStaker extends staking.ActiveStaker {}
 
 //Genus
-export type TxoState = genus_models.TxoStateMap
+export type TxoState = genus_models.TxoState;
 export class Txo extends genus_models.Txo {}
-export type SortOrder = genus_models.SortOrderMap
+export type SortOrder = genus_models.SortOrder;
 export class ConfidenceFactor extends genus_models.ConfidenceFactor {}
 export class ChainDistance extends genus_models.ChainDistance {}
-export type LabelType = genus_models.LabelTypeMap
+export type LabelType = genus_models.LabelType;
 export class AssetLabel extends genus_models.AssetLabel {}
 export class IndexSpec extends genus_models.IndexSpec {}
 export class IndexFieldSpec extends genus_models.IndexFieldSpec {}
@@ -264,38 +242,34 @@ export class FetchEpochDataRes extends bifrost_rpc.FetchEpochDataRes {}
 
 //Quivr
 export class Proof extends proof.Proof {}
-export class Proof_And extends proof.Proof.And {}
-export class Proof_Or extends proof.Proof.Or {}
-export class Proof_Not extends proof.Proof.Not {}
-export class Proof_Threshold extends proof.Proof.Threshold {}
-export class Proof_EqualTo extends proof.Proof.EqualTo {}
-export class Proof_GreaterThan extends proof.Proof.GreaterThan {}
-export class Proof_LessThan extends proof.Proof.LessThan {}
-export class Proof_ExactMatch extends proof.Proof.ExactMatch {}
-export class Proof_TickRange extends proof.Proof.TickRange {}
-export class Proof_HeightRange extends proof.Proof.HeightRange {}
-export class Proof_DigitalSignature extends proof.Proof.DigitalSignature {}
-export class Proof_Digest extends proof.Proof.Digest {}
-export class Proof_Locked extends proof.Proof.Locked {}
+export class Proof_And extends proof.Proof_And {}
+export class Proof_Or extends proof.Proof_Or {}
+export class Proof_Not extends proof.Proof_Not {}
+export class Proof_Threshold extends proof.Proof_Threshold {}
+export class Proof_EqualTo extends proof.Proof_EqualTo {}
+export class Proof_GreaterThan extends proof.Proof_GreaterThan {}
+export class Proof_LessThan extends proof.Proof_LessThan {}
+export class Proof_ExactMatch extends proof.Proof_ExactMatch {}
+export class Proof_TickRange extends proof.Proof_TickRange {}
+export class Proof_HeightRange extends proof.Proof_HeightRange {}
+export class Proof_DigitalSignature extends proof.Proof_DigitalSignature {}
+export class Proof_Digest extends proof.Proof_Digest {}
+export class Proof_Locked extends proof.Proof_Locked {}
 
 export class Proposition extends proposition.Proposition {}
-export class Proposition_And extends proposition.Proposition.And {}
-export class Proposition_Or extends proposition.Proposition.Or {}
-export class Proposition_Not extends proposition.Proposition.Not {}
-export class Proposition_Threshold extends proposition.Proposition.Threshold {}
-export class Proposition_EqualTo extends proposition.Proposition.EqualTo {}
-export class Proposition_GreaterThan extends proposition.Proposition
-  .GreaterThan {}
-export class Proposition_LessThan extends proposition.Proposition.LessThan {}
-export class Proposition_ExactMatch extends proposition.Proposition
-  .ExactMatch {}
-export class Proposition_TickRange extends proposition.Proposition.TickRange {}
-export class Proposition_HeightRange extends proposition.Proposition
-  .HeightRange {}
-export class Proposition_DigitalSignature extends proposition.Proposition
-  .DigitalSignature {}
-export class Proposition_Digest extends proposition.Proposition.Digest {}
-export class Proposition_Locked extends proposition.Proposition.Locked {}
+export class Proposition_And extends proposition.Proposition_And {}
+export class Proposition_Or extends proposition.Proposition_Or {}
+export class Proposition_Not extends proposition.Proposition_Not {}
+export class Proposition_Threshold extends proposition.Proposition_Threshold {}
+export class Proposition_EqualTo extends proposition.Proposition_EqualTo {}
+export class Proposition_GreaterThan extends proposition.Proposition_GreaterThan {}
+export class Proposition_LessThan extends proposition.Proposition_LessThan {}
+export class Proposition_ExactMatch extends proposition.Proposition_ExactMatch {}
+export class Proposition_TickRange extends proposition.Proposition_TickRange {}
+export class Proposition_HeightRange extends proposition.Proposition_HeightRange {}
+export class Proposition_DigitalSignature extends proposition.Proposition_DigitalSignature {}
+export class Proposition_Digest extends proposition.Proposition_Digest {}
+export class Proposition_Locked extends proposition.Proposition_Locked {}
 
 export class Data extends shared.Data {}
 
@@ -309,12 +283,12 @@ export class Digest extends shared.Digest {}
 export class DigestVerification extends shared.DigestVerification {}
 
 export class VerificationKey extends shared.VerificationKey {}
-export class Ed25519Vk extends VerificationKey.Ed25519Vk {}
-export class ExtendedEd25519Vk extends VerificationKey.ExtendedEd25519Vk {}
+export class Ed25519Vk extends shared.VerificationKey_Ed25519Vk {}
+export class ExtendedEd25519Vk extends shared.VerificationKey_ExtendedEd25519Vk {}
 
 export class SigningKey extends shared.SigningKey {}
-export class Ed25519Sk extends SigningKey.Ed25519Sk {}
-export class ExtendedEd25519Sk extends SigningKey.ExtendedEd25519Sk {}
+export class Ed25519Sk extends shared.SigningKey_Ed25519Sk {}
+export class ExtendedEd25519Sk extends shared.SigningKey_ExtendedEd25519Sk {}
 
 export class KeyPair extends shared.KeyPair {}
 
@@ -325,3 +299,5 @@ export class SignableBytes extends shared.SignableBytes {}
 export class TxBind extends shared.TxBind {}
 export class Int128 extends shared.Int128 {}
 export class Ratio extends shared.Ratio {}
+
+

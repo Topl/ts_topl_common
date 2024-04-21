@@ -1,811 +1,971 @@
-// package: co.topl.genus.services
-// file: genus/genus_rpc.proto
-
-import * as jspb from "google-protobuf";
-import * as brambl_models_address_pb from "../brambl/models/address_pb";
-import * as brambl_models_identifier_pb from "../brambl/models/identifier_pb";
-import * as brambl_models_event_pb from "../brambl/models/event_pb";
-import * as consensus_models_block_id_pb from "../consensus/models/block_id_pb";
-import * as genus_genus_models_pb from "../genus/genus_models_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
-import * as node_models_block_pb from "../node/models/block_pb";
-import * as validate_validate_pb from "../validate/validate_pb";
-
-export class GetExistingTransactionIndexesResponse extends jspb.Message {
-  hasIndexspecs(): boolean;
-  clearIndexspecs(): void;
-  getIndexspecs(): IndexSpecs | undefined;
-  setIndexspecs(value?: IndexSpecs): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetExistingTransactionIndexesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetExistingTransactionIndexesResponse): GetExistingTransactionIndexesResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetExistingTransactionIndexesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetExistingTransactionIndexesResponse;
-  static deserializeBinaryFromReader(message: GetExistingTransactionIndexesResponse, reader: jspb.BinaryReader): GetExistingTransactionIndexesResponse;
-}
-
-export namespace GetExistingTransactionIndexesResponse {
-  export type AsObject = {
-    indexspecs?: IndexSpecs.AsObject,
-  }
-}
-
-export class BlockResponse extends jspb.Message {
-  hasBlock(): boolean;
-  clearBlock(): void;
-  getBlock(): node_models_block_pb.FullBlock | undefined;
-  setBlock(value?: node_models_block_pb.FullBlock): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockResponse): BlockResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockResponse;
-  static deserializeBinaryFromReader(message: BlockResponse, reader: jspb.BinaryReader): BlockResponse;
-}
-
-export namespace BlockResponse {
-  export type AsObject = {
-    block?: node_models_block_pb.FullBlock.AsObject,
-  }
-}
-
-export class TransactionResponse extends jspb.Message {
-  hasTransactionreceipt(): boolean;
-  clearTransactionreceipt(): void;
-  getTransactionreceipt(): genus_genus_models_pb.TransactionReceipt | undefined;
-  setTransactionreceipt(value?: genus_genus_models_pb.TransactionReceipt): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TransactionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TransactionResponse): TransactionResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TransactionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TransactionResponse;
-  static deserializeBinaryFromReader(message: TransactionResponse, reader: jspb.BinaryReader): TransactionResponse;
-}
-
-export namespace TransactionResponse {
-  export type AsObject = {
-    transactionreceipt?: genus_genus_models_pb.TransactionReceipt.AsObject,
-  }
-}
-
-export class TxoResponse extends jspb.Message {
-  hasTxo(): boolean;
-  clearTxo(): void;
-  getTxo(): genus_genus_models_pb.Txo | undefined;
-  setTxo(value?: genus_genus_models_pb.Txo): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TxoResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TxoResponse): TxoResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TxoResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TxoResponse;
-  static deserializeBinaryFromReader(message: TxoResponse, reader: jspb.BinaryReader): TxoResponse;
-}
-
-export namespace TxoResponse {
-  export type AsObject = {
-    txo?: genus_genus_models_pb.Txo.AsObject,
-  }
-}
-
-export class GetBlockByIdRequest extends jspb.Message {
-  hasBlockid(): boolean;
-  clearBlockid(): void;
-  getBlockid(): consensus_models_block_id_pb.BlockId | undefined;
-  setBlockid(value?: consensus_models_block_id_pb.BlockId): void;
-
-  hasConfidencefactor(): boolean;
-  clearConfidencefactor(): void;
-  getConfidencefactor(): genus_genus_models_pb.ConfidenceFactor | undefined;
-  setConfidencefactor(value?: genus_genus_models_pb.ConfidenceFactor): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetBlockByIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetBlockByIdRequest): GetBlockByIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetBlockByIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetBlockByIdRequest;
-  static deserializeBinaryFromReader(message: GetBlockByIdRequest, reader: jspb.BinaryReader): GetBlockByIdRequest;
-}
-
-export namespace GetBlockByIdRequest {
-  export type AsObject = {
-    blockid?: consensus_models_block_id_pb.BlockId.AsObject,
-    confidencefactor?: genus_genus_models_pb.ConfidenceFactor.AsObject,
-  }
-}
-
-export class GetBlockByHeightRequest extends jspb.Message {
-  hasHeight(): boolean;
-  clearHeight(): void;
-  getHeight(): genus_genus_models_pb.ChainDistance | undefined;
-  setHeight(value?: genus_genus_models_pb.ChainDistance): void;
-
-  hasConfidencefactor(): boolean;
-  clearConfidencefactor(): void;
-  getConfidencefactor(): genus_genus_models_pb.ConfidenceFactor | undefined;
-  setConfidencefactor(value?: genus_genus_models_pb.ConfidenceFactor): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetBlockByHeightRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetBlockByHeightRequest): GetBlockByHeightRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetBlockByHeightRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetBlockByHeightRequest;
-  static deserializeBinaryFromReader(message: GetBlockByHeightRequest, reader: jspb.BinaryReader): GetBlockByHeightRequest;
-}
-
-export namespace GetBlockByHeightRequest {
-  export type AsObject = {
-    height?: genus_genus_models_pb.ChainDistance.AsObject,
-    confidencefactor?: genus_genus_models_pb.ConfidenceFactor.AsObject,
-  }
-}
-
-export class GetBlockByDepthRequest extends jspb.Message {
-  hasDepth(): boolean;
-  clearDepth(): void;
-  getDepth(): genus_genus_models_pb.ChainDistance | undefined;
-  setDepth(value?: genus_genus_models_pb.ChainDistance): void;
-
-  hasConfidencefactor(): boolean;
-  clearConfidencefactor(): void;
-  getConfidencefactor(): genus_genus_models_pb.ConfidenceFactor | undefined;
-  setConfidencefactor(value?: genus_genus_models_pb.ConfidenceFactor): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetBlockByDepthRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetBlockByDepthRequest): GetBlockByDepthRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetBlockByDepthRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetBlockByDepthRequest;
-  static deserializeBinaryFromReader(message: GetBlockByDepthRequest, reader: jspb.BinaryReader): GetBlockByDepthRequest;
-}
-
-export namespace GetBlockByDepthRequest {
-  export type AsObject = {
-    depth?: genus_genus_models_pb.ChainDistance.AsObject,
-    confidencefactor?: genus_genus_models_pb.ConfidenceFactor.AsObject,
-  }
-}
-
-export class GetTransactionByIdRequest extends jspb.Message {
-  hasTransactionid(): boolean;
-  clearTransactionid(): void;
-  getTransactionid(): brambl_models_identifier_pb.TransactionId | undefined;
-  setTransactionid(value?: brambl_models_identifier_pb.TransactionId): void;
-
-  hasConfidencefactor(): boolean;
-  clearConfidencefactor(): void;
-  getConfidencefactor(): genus_genus_models_pb.ConfidenceFactor | undefined;
-  setConfidencefactor(value?: genus_genus_models_pb.ConfidenceFactor): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTransactionByIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTransactionByIdRequest): GetTransactionByIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTransactionByIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTransactionByIdRequest;
-  static deserializeBinaryFromReader(message: GetTransactionByIdRequest, reader: jspb.BinaryReader): GetTransactionByIdRequest;
-}
-
-export namespace GetTransactionByIdRequest {
-  export type AsObject = {
-    transactionid?: brambl_models_identifier_pb.TransactionId.AsObject,
-    confidencefactor?: genus_genus_models_pb.ConfidenceFactor.AsObject,
-  }
-}
-
-export class GetTxoStatsReq extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTxoStatsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTxoStatsReq): GetTxoStatsReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTxoStatsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTxoStatsReq;
-  static deserializeBinaryFromReader(message: GetTxoStatsReq, reader: jspb.BinaryReader): GetTxoStatsReq;
-}
-
-export namespace GetTxoStatsReq {
-  export type AsObject = {
-  }
-}
-
-export class GetTxoStatsRes extends jspb.Message {
-  hasTxos(): boolean;
-  clearTxos(): void;
-  getTxos(): TxoStats | undefined;
-  setTxos(value?: TxoStats): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTxoStatsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTxoStatsRes): GetTxoStatsRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetTxoStatsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTxoStatsRes;
-  static deserializeBinaryFromReader(message: GetTxoStatsRes, reader: jspb.BinaryReader): GetTxoStatsRes;
-}
-
-export namespace GetTxoStatsRes {
-  export type AsObject = {
-    txos?: TxoStats.AsObject,
-  }
-}
-
-export class BlockchainSizeStatsReq extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockchainSizeStatsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockchainSizeStatsReq): BlockchainSizeStatsReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockchainSizeStatsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockchainSizeStatsReq;
-  static deserializeBinaryFromReader(message: BlockchainSizeStatsReq, reader: jspb.BinaryReader): BlockchainSizeStatsReq;
-}
-
-export namespace BlockchainSizeStatsReq {
-  export type AsObject = {
-  }
-}
-
-export class BlockchainSizeStatsRes extends jspb.Message {
-  hasBlockchainsize(): boolean;
-  clearBlockchainsize(): void;
-  getBlockchainsize(): BlockchainSizeStats | undefined;
-  setBlockchainsize(value?: BlockchainSizeStats): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockchainSizeStatsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockchainSizeStatsRes): BlockchainSizeStatsRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockchainSizeStatsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockchainSizeStatsRes;
-  static deserializeBinaryFromReader(message: BlockchainSizeStatsRes, reader: jspb.BinaryReader): BlockchainSizeStatsRes;
-}
-
-export namespace BlockchainSizeStatsRes {
-  export type AsObject = {
-    blockchainsize?: BlockchainSizeStats.AsObject,
-  }
-}
-
-export class BlockStatsReq extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockStatsReq.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockStatsReq): BlockStatsReq.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockStatsReq, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockStatsReq;
-  static deserializeBinaryFromReader(message: BlockStatsReq, reader: jspb.BinaryReader): BlockStatsReq;
-}
-
-export namespace BlockStatsReq {
-  export type AsObject = {
-  }
-}
-
-export class BlockStatsRes extends jspb.Message {
-  hasBlockstats(): boolean;
-  clearBlockstats(): void;
-  getBlockstats(): BlockStats | undefined;
-  setBlockstats(value?: BlockStats): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockStatsRes.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockStatsRes): BlockStatsRes.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockStatsRes, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockStatsRes;
-  static deserializeBinaryFromReader(message: BlockStatsRes, reader: jspb.BinaryReader): BlockStatsRes;
-}
-
-export namespace BlockStatsRes {
-  export type AsObject = {
-    blockstats?: BlockStats.AsObject,
-  }
-}
-
-export class CreateOnChainTransactionIndexResponse extends jspb.Message {
-  getOk(): boolean;
-  setOk(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateOnChainTransactionIndexResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateOnChainTransactionIndexResponse): CreateOnChainTransactionIndexResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateOnChainTransactionIndexResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateOnChainTransactionIndexResponse;
-  static deserializeBinaryFromReader(message: CreateOnChainTransactionIndexResponse, reader: jspb.BinaryReader): CreateOnChainTransactionIndexResponse;
-}
-
-export namespace CreateOnChainTransactionIndexResponse {
-  export type AsObject = {
-    ok: boolean,
-  }
-}
-
-export class QueryByLockAddressRequest extends jspb.Message {
-  hasAddress(): boolean;
-  clearAddress(): void;
-  getAddress(): brambl_models_address_pb.LockAddress | undefined;
-  setAddress(value?: brambl_models_address_pb.LockAddress): void;
-
-  hasConfidencefactor(): boolean;
-  clearConfidencefactor(): void;
-  getConfidencefactor(): genus_genus_models_pb.ConfidenceFactor | undefined;
-  setConfidencefactor(value?: genus_genus_models_pb.ConfidenceFactor): void;
-
-  getState(): genus_genus_models_pb.TxoStateMap[keyof genus_genus_models_pb.TxoStateMap];
-  setState(value: genus_genus_models_pb.TxoStateMap[keyof genus_genus_models_pb.TxoStateMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryByLockAddressRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryByLockAddressRequest): QueryByLockAddressRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: QueryByLockAddressRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryByLockAddressRequest;
-  static deserializeBinaryFromReader(message: QueryByLockAddressRequest, reader: jspb.BinaryReader): QueryByLockAddressRequest;
-}
-
-export namespace QueryByLockAddressRequest {
-  export type AsObject = {
-    address?: brambl_models_address_pb.LockAddress.AsObject,
-    confidencefactor?: genus_genus_models_pb.ConfidenceFactor.AsObject,
-    state: genus_genus_models_pb.TxoStateMap[keyof genus_genus_models_pb.TxoStateMap],
-  }
-}
-
-export class QueryByAssetLabelRequest extends jspb.Message {
-  hasAssetlabel(): boolean;
-  clearAssetlabel(): void;
-  getAssetlabel(): genus_genus_models_pb.AssetLabel | undefined;
-  setAssetlabel(value?: genus_genus_models_pb.AssetLabel): void;
-
-  hasConfidencefactor(): boolean;
-  clearConfidencefactor(): void;
-  getConfidencefactor(): genus_genus_models_pb.ConfidenceFactor | undefined;
-  setConfidencefactor(value?: genus_genus_models_pb.ConfidenceFactor): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryByAssetLabelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryByAssetLabelRequest): QueryByAssetLabelRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: QueryByAssetLabelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryByAssetLabelRequest;
-  static deserializeBinaryFromReader(message: QueryByAssetLabelRequest, reader: jspb.BinaryReader): QueryByAssetLabelRequest;
-}
-
-export namespace QueryByAssetLabelRequest {
-  export type AsObject = {
-    assetlabel?: genus_genus_models_pb.AssetLabel.AsObject,
-    confidencefactor?: genus_genus_models_pb.ConfidenceFactor.AsObject,
-  }
-}
-
-export class TxoLockAddressResponse extends jspb.Message {
-  clearTxosList(): void;
-  getTxosList(): Array<genus_genus_models_pb.Txo>;
-  setTxosList(value: Array<genus_genus_models_pb.Txo>): void;
-  addTxos(value?: genus_genus_models_pb.Txo, index?: number): genus_genus_models_pb.Txo;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TxoLockAddressResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TxoLockAddressResponse): TxoLockAddressResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TxoLockAddressResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TxoLockAddressResponse;
-  static deserializeBinaryFromReader(message: TxoLockAddressResponse, reader: jspb.BinaryReader): TxoLockAddressResponse;
-}
-
-export namespace TxoLockAddressResponse {
-  export type AsObject = {
-    txosList: Array<genus_genus_models_pb.Txo.AsObject>,
-  }
-}
-
-export class CreateOnChainTransactionIndexRequest extends jspb.Message {
-  hasIndexspec(): boolean;
-  clearIndexspec(): void;
-  getIndexspec(): genus_genus_models_pb.IndexSpec | undefined;
-  setIndexspec(value?: genus_genus_models_pb.IndexSpec): void;
-
-  getPopulate(): boolean;
-  setPopulate(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateOnChainTransactionIndexRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateOnChainTransactionIndexRequest): CreateOnChainTransactionIndexRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateOnChainTransactionIndexRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateOnChainTransactionIndexRequest;
-  static deserializeBinaryFromReader(message: CreateOnChainTransactionIndexRequest, reader: jspb.BinaryReader): CreateOnChainTransactionIndexRequest;
-}
-
-export namespace CreateOnChainTransactionIndexRequest {
-  export type AsObject = {
-    indexspec?: genus_genus_models_pb.IndexSpec.AsObject,
-    populate: boolean,
-  }
-}
-
-export class QueryByGroupIdRequest extends jspb.Message {
-  hasGroupid(): boolean;
-  clearGroupid(): void;
-  getGroupid(): brambl_models_identifier_pb.GroupId | undefined;
-  setGroupid(value?: brambl_models_identifier_pb.GroupId): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryByGroupIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryByGroupIdRequest): QueryByGroupIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: QueryByGroupIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryByGroupIdRequest;
-  static deserializeBinaryFromReader(message: QueryByGroupIdRequest, reader: jspb.BinaryReader): QueryByGroupIdRequest;
-}
-
-export namespace QueryByGroupIdRequest {
-  export type AsObject = {
-    groupid?: brambl_models_identifier_pb.GroupId.AsObject,
-  }
-}
-
-export class GroupPolicyResponse extends jspb.Message {
-  hasGrouppolicy(): boolean;
-  clearGrouppolicy(): void;
-  getGrouppolicy(): brambl_models_event_pb.Event.GroupPolicy | undefined;
-  setGrouppolicy(value?: brambl_models_event_pb.Event.GroupPolicy): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GroupPolicyResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GroupPolicyResponse): GroupPolicyResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GroupPolicyResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GroupPolicyResponse;
-  static deserializeBinaryFromReader(message: GroupPolicyResponse, reader: jspb.BinaryReader): GroupPolicyResponse;
-}
-
-export namespace GroupPolicyResponse {
-  export type AsObject = {
-    grouppolicy?: brambl_models_event_pb.Event.GroupPolicy.AsObject,
-  }
-}
-
-export class QueryBySeriesIdRequest extends jspb.Message {
-  hasSeriesid(): boolean;
-  clearSeriesid(): void;
-  getSeriesid(): brambl_models_identifier_pb.SeriesId | undefined;
-  setSeriesid(value?: brambl_models_identifier_pb.SeriesId): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryBySeriesIdRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryBySeriesIdRequest): QueryBySeriesIdRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: QueryBySeriesIdRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryBySeriesIdRequest;
-  static deserializeBinaryFromReader(message: QueryBySeriesIdRequest, reader: jspb.BinaryReader): QueryBySeriesIdRequest;
-}
-
-export namespace QueryBySeriesIdRequest {
-  export type AsObject = {
-    seriesid?: brambl_models_identifier_pb.SeriesId.AsObject,
-  }
-}
-
-export class SeriesPolicyResponse extends jspb.Message {
-  hasSeriespolicy(): boolean;
-  clearSeriespolicy(): void;
-  getSeriespolicy(): brambl_models_event_pb.Event.SeriesPolicy | undefined;
-  setSeriespolicy(value?: brambl_models_event_pb.Event.SeriesPolicy): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SeriesPolicyResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SeriesPolicyResponse): SeriesPolicyResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SeriesPolicyResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SeriesPolicyResponse;
-  static deserializeBinaryFromReader(message: SeriesPolicyResponse, reader: jspb.BinaryReader): SeriesPolicyResponse;
-}
-
-export namespace SeriesPolicyResponse {
-  export type AsObject = {
-    seriespolicy?: brambl_models_event_pb.Event.SeriesPolicy.AsObject,
-  }
-}
-
-export class IndexSpecs extends jspb.Message {
-  clearIndexspecList(): void;
-  getIndexspecList(): Array<genus_genus_models_pb.IndexSpec>;
-  setIndexspecList(value: Array<genus_genus_models_pb.IndexSpec>): void;
-  addIndexspec(value?: genus_genus_models_pb.IndexSpec, index?: number): genus_genus_models_pb.IndexSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IndexSpecs.AsObject;
-  static toObject(includeInstance: boolean, msg: IndexSpecs): IndexSpecs.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: IndexSpecs, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IndexSpecs;
-  static deserializeBinaryFromReader(message: IndexSpecs, reader: jspb.BinaryReader): IndexSpecs;
-}
-
-export namespace IndexSpecs {
-  export type AsObject = {
-    indexspecList: Array<genus_genus_models_pb.IndexSpec.AsObject>,
-  }
-}
-
-export class IndexDef extends jspb.Message {
-  hasOnchain(): boolean;
-  clearOnchain(): void;
-  getOnchain(): CreateOnChainTransactionIndexRequest | undefined;
-  setOnchain(value?: CreateOnChainTransactionIndexRequest): void;
-
-  getXdevCase(): IndexDef.XdevCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IndexDef.AsObject;
-  static toObject(includeInstance: boolean, msg: IndexDef): IndexDef.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: IndexDef, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IndexDef;
-  static deserializeBinaryFromReader(message: IndexDef, reader: jspb.BinaryReader): IndexDef;
-}
-
-export namespace IndexDef {
-  export type AsObject = {
-    onchain?: CreateOnChainTransactionIndexRequest.AsObject,
-  }
-
-  export enum XdevCase {
-    XDEV_NOT_SET = 0,
-    ONCHAIN = 1,
-  }
-}
-
-export class GetExistingTransactionIndexesRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetExistingTransactionIndexesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetExistingTransactionIndexesRequest): GetExistingTransactionIndexesRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetExistingTransactionIndexesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetExistingTransactionIndexesRequest;
-  static deserializeBinaryFromReader(message: GetExistingTransactionIndexesRequest, reader: jspb.BinaryReader): GetExistingTransactionIndexesRequest;
-}
-
-export namespace GetExistingTransactionIndexesRequest {
-  export type AsObject = {
-  }
-}
-
-export class DropIndexRequest extends jspb.Message {
-  getIndexname(): string;
-  setIndexname(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DropIndexRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DropIndexRequest): DropIndexRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DropIndexRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DropIndexRequest;
-  static deserializeBinaryFromReader(message: DropIndexRequest, reader: jspb.BinaryReader): DropIndexRequest;
-}
-
-export namespace DropIndexRequest {
-  export type AsObject = {
-    indexname: string,
-  }
-}
-
-export class DropIndexResponse extends jspb.Message {
-  getDropped(): boolean;
-  setDropped(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DropIndexResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DropIndexResponse): DropIndexResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DropIndexResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DropIndexResponse;
-  static deserializeBinaryFromReader(message: DropIndexResponse, reader: jspb.BinaryReader): DropIndexResponse;
-}
-
-export namespace DropIndexResponse {
-  export type AsObject = {
-    dropped: boolean,
-  }
-}
-
-export class GetIndexedTransactionsRequest extends jspb.Message {
-  getIndexname(): string;
-  setIndexname(value: string): void;
-
-  clearValueList(): void;
-  getValueList(): Array<IndexMatchValue>;
-  setValueList(value: Array<IndexMatchValue>): void;
-  addValue(value?: IndexMatchValue, index?: number): IndexMatchValue;
-
-  getMaxresults(): number;
-  setMaxresults(value: number): void;
-
-  getSkipresults(): number;
-  setSkipresults(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetIndexedTransactionsRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetIndexedTransactionsRequest): GetIndexedTransactionsRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: GetIndexedTransactionsRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetIndexedTransactionsRequest;
-  static deserializeBinaryFromReader(message: GetIndexedTransactionsRequest, reader: jspb.BinaryReader): GetIndexedTransactionsRequest;
-}
-
-export namespace GetIndexedTransactionsRequest {
-  export type AsObject = {
-    indexname: string,
-    valueList: Array<IndexMatchValue.AsObject>,
-    maxresults: number,
-    skipresults: number,
-  }
-}
-
-export class IndexMatchValue extends jspb.Message {
-  hasStringvalue(): boolean;
-  clearStringvalue(): void;
-  getStringvalue(): string;
-  setStringvalue(value: string): void;
-
-  hasIntvalue(): boolean;
-  clearIntvalue(): void;
-  getIntvalue(): number;
-  setIntvalue(value: number): void;
-
-  hasUintvalue(): boolean;
-  clearUintvalue(): void;
-  getUintvalue(): number;
-  setUintvalue(value: number): void;
-
-  hasFieldname(): boolean;
-  clearFieldname(): void;
-  getFieldname(): google_protobuf_wrappers_pb.StringValue | undefined;
-  setFieldname(value?: google_protobuf_wrappers_pb.StringValue): void;
-
-  getValueCase(): IndexMatchValue.ValueCase;
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IndexMatchValue.AsObject;
-  static toObject(includeInstance: boolean, msg: IndexMatchValue): IndexMatchValue.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: IndexMatchValue, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IndexMatchValue;
-  static deserializeBinaryFromReader(message: IndexMatchValue, reader: jspb.BinaryReader): IndexMatchValue;
-}
-
-export namespace IndexMatchValue {
-  export type AsObject = {
-    stringvalue: string,
-    intvalue: number,
-    uintvalue: number,
-    fieldname?: google_protobuf_wrappers_pb.StringValue.AsObject,
-  }
-
-  export enum ValueCase {
-    VALUE_NOT_SET = 0,
-    STRINGVALUE = 1,
-    INTVALUE = 2,
-    UINTVALUE = 3,
-  }
-}
-
-export class TxoStats extends jspb.Message {
-  getSpent(): number;
-  setSpent(value: number): void;
-
-  getUnspent(): number;
-  setUnspent(value: number): void;
-
-  getPending(): number;
-  setPending(value: number): void;
-
-  getTotal(): number;
-  setTotal(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TxoStats.AsObject;
-  static toObject(includeInstance: boolean, msg: TxoStats): TxoStats.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: TxoStats, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TxoStats;
-  static deserializeBinaryFromReader(message: TxoStats, reader: jspb.BinaryReader): TxoStats;
-}
-
-export namespace TxoStats {
-  export type AsObject = {
-    spent: number,
-    unspent: number,
-    pending: number,
-    total: number,
-  }
-}
-
-export class BlockchainSizeStats extends jspb.Message {
-  getBlockheaderbytes(): number;
-  setBlockheaderbytes(value: number): void;
-
-  getTransactionbytes(): number;
-  setTransactionbytes(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockchainSizeStats.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockchainSizeStats): BlockchainSizeStats.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockchainSizeStats, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockchainSizeStats;
-  static deserializeBinaryFromReader(message: BlockchainSizeStats, reader: jspb.BinaryReader): BlockchainSizeStats;
-}
-
-export namespace BlockchainSizeStats {
-  export type AsObject = {
-    blockheaderbytes: number,
-    transactionbytes: number,
-  }
-}
-
-export class BlockStats extends jspb.Message {
-  getEmpty(): number;
-  setEmpty(value: number): void;
-
-  getNonempty(): number;
-  setNonempty(value: number): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BlockStats.AsObject;
-  static toObject(includeInstance: boolean, msg: BlockStats): BlockStats.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: BlockStats, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BlockStats;
-  static deserializeBinaryFromReader(message: BlockStats, reader: jspb.BinaryReader): BlockStats;
-}
-
-export namespace BlockStats {
-  export type AsObject = {
-    empty: number,
-    nonempty: number,
-  }
+// @generated by protoc-gen-es v1.8.0
+// @generated from file genus/genus_rpc.proto (package co.topl.genus.services, syntax proto3)
+/* eslint-disable */
+// @ts-nocheck
+
+///////////////////////////////////////////////////////////////////////////////
+// Services provided by Genus
+///////////////////////////////////////////////////////////////////////////////
+
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import { Message, proto3 } from "@bufbuild/protobuf";
+import type { FullBlock } from "../node/models/block_pb.js";
+import type { AssetLabel, ChainDistance, ConfidenceFactor, IndexSpec, TransactionReceipt, Txo, TxoState } from "./genus_models_pb.js";
+import type { BlockId } from "../consensus/models/block_id_pb.js";
+import type { GroupId, SeriesId, TransactionId } from "../brambl/models/identifier_pb.js";
+import type { LockAddress } from "../brambl/models/address_pb.js";
+import type { Event_GroupPolicy, Event_SeriesPolicy } from "../brambl/models/event_pb.js";
+
+/**
+ * @generated from message co.topl.genus.services.GetExistingTransactionIndexesResponse
+ */
+export declare class GetExistingTransactionIndexesResponse extends Message<GetExistingTransactionIndexesResponse> {
+  /**
+   * @generated from field: co.topl.genus.services.IndexSpecs indexSpecs = 1;
+   */
+  indexSpecs?: IndexSpecs;
+
+  constructor(data?: PartialMessage<GetExistingTransactionIndexesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetExistingTransactionIndexesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetExistingTransactionIndexesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetExistingTransactionIndexesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetExistingTransactionIndexesResponse;
+
+  static equals(a: GetExistingTransactionIndexesResponse | PlainMessage<GetExistingTransactionIndexesResponse> | undefined, b: GetExistingTransactionIndexesResponse | PlainMessage<GetExistingTransactionIndexesResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.BlockResponse
+ */
+export declare class BlockResponse extends Message<BlockResponse> {
+  /**
+   * @generated from field: co.topl.node.models.FullBlock block = 1;
+   */
+  block?: FullBlock;
+
+  constructor(data?: PartialMessage<BlockResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockResponse;
+
+  static equals(a: BlockResponse | PlainMessage<BlockResponse> | undefined, b: BlockResponse | PlainMessage<BlockResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.TransactionResponse
+ */
+export declare class TransactionResponse extends Message<TransactionResponse> {
+  /**
+   * @generated from field: co.topl.genus.services.TransactionReceipt transactionReceipt = 1;
+   */
+  transactionReceipt?: TransactionReceipt;
+
+  constructor(data?: PartialMessage<TransactionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.TransactionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TransactionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TransactionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TransactionResponse;
+
+  static equals(a: TransactionResponse | PlainMessage<TransactionResponse> | undefined, b: TransactionResponse | PlainMessage<TransactionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.TxoResponse
+ */
+export declare class TxoResponse extends Message<TxoResponse> {
+  /**
+   * @generated from field: co.topl.genus.services.Txo txo = 1;
+   */
+  txo?: Txo;
+
+  constructor(data?: PartialMessage<TxoResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.TxoResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TxoResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TxoResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TxoResponse;
+
+  static equals(a: TxoResponse | PlainMessage<TxoResponse> | undefined, b: TxoResponse | PlainMessage<TxoResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.GetBlockByIdRequest
+ */
+export declare class GetBlockByIdRequest extends Message<GetBlockByIdRequest> {
+  /**
+   * @generated from field: co.topl.consensus.models.BlockId blockId = 1;
+   */
+  blockId?: BlockId;
+
+  /**
+   * @generated from field: co.topl.genus.services.ConfidenceFactor confidenceFactor = 2;
+   */
+  confidenceFactor?: ConfidenceFactor;
+
+  constructor(data?: PartialMessage<GetBlockByIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetBlockByIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBlockByIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBlockByIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBlockByIdRequest;
+
+  static equals(a: GetBlockByIdRequest | PlainMessage<GetBlockByIdRequest> | undefined, b: GetBlockByIdRequest | PlainMessage<GetBlockByIdRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.GetBlockByHeightRequest
+ */
+export declare class GetBlockByHeightRequest extends Message<GetBlockByHeightRequest> {
+  /**
+   * @generated from field: co.topl.genus.services.ChainDistance height = 1;
+   */
+  height?: ChainDistance;
+
+  /**
+   * @generated from field: co.topl.genus.services.ConfidenceFactor confidenceFactor = 2;
+   */
+  confidenceFactor?: ConfidenceFactor;
+
+  constructor(data?: PartialMessage<GetBlockByHeightRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetBlockByHeightRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBlockByHeightRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBlockByHeightRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBlockByHeightRequest;
+
+  static equals(a: GetBlockByHeightRequest | PlainMessage<GetBlockByHeightRequest> | undefined, b: GetBlockByHeightRequest | PlainMessage<GetBlockByHeightRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.GetBlockByDepthRequest
+ */
+export declare class GetBlockByDepthRequest extends Message<GetBlockByDepthRequest> {
+  /**
+   * @generated from field: co.topl.genus.services.ChainDistance depth = 1;
+   */
+  depth?: ChainDistance;
+
+  /**
+   * @generated from field: co.topl.genus.services.ConfidenceFactor confidenceFactor = 2;
+   */
+  confidenceFactor?: ConfidenceFactor;
+
+  constructor(data?: PartialMessage<GetBlockByDepthRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetBlockByDepthRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBlockByDepthRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBlockByDepthRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBlockByDepthRequest;
+
+  static equals(a: GetBlockByDepthRequest | PlainMessage<GetBlockByDepthRequest> | undefined, b: GetBlockByDepthRequest | PlainMessage<GetBlockByDepthRequest> | undefined): boolean;
+}
+
+/**
+ * Used to request a transaction by specifying its ID.
+ *
+ * @generated from message co.topl.genus.services.GetTransactionByIdRequest
+ */
+export declare class GetTransactionByIdRequest extends Message<GetTransactionByIdRequest> {
+  /**
+   * @generated from field: co.topl.brambl.models.TransactionId transactionId = 1;
+   */
+  transactionId?: TransactionId;
+
+  /**
+   * The default value for confidenceFactor is 0.9999999 (7 nines)
+   *
+   * @generated from field: co.topl.genus.services.ConfidenceFactor confidenceFactor = 2;
+   */
+  confidenceFactor?: ConfidenceFactor;
+
+  constructor(data?: PartialMessage<GetTransactionByIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetTransactionByIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTransactionByIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTransactionByIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTransactionByIdRequest;
+
+  static equals(a: GetTransactionByIdRequest | PlainMessage<GetTransactionByIdRequest> | undefined, b: GetTransactionByIdRequest | PlainMessage<GetTransactionByIdRequest> | undefined): boolean;
+}
+
+/**
+ * Request type for NetworkMetricsService:getTxoStats
+ *
+ * @generated from message co.topl.genus.services.GetTxoStatsReq
+ */
+export declare class GetTxoStatsReq extends Message<GetTxoStatsReq> {
+  constructor(data?: PartialMessage<GetTxoStatsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetTxoStatsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTxoStatsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTxoStatsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTxoStatsReq;
+
+  static equals(a: GetTxoStatsReq | PlainMessage<GetTxoStatsReq> | undefined, b: GetTxoStatsReq | PlainMessage<GetTxoStatsReq> | undefined): boolean;
+}
+
+/**
+ * Response type for NetworkMetricsService:getTxoStats
+ *
+ * @generated from message co.topl.genus.services.GetTxoStatsRes
+ */
+export declare class GetTxoStatsRes extends Message<GetTxoStatsRes> {
+  /**
+   * @generated from field: co.topl.genus.services.TxoStats txos = 1;
+   */
+  txos?: TxoStats;
+
+  constructor(data?: PartialMessage<GetTxoStatsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetTxoStatsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTxoStatsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTxoStatsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTxoStatsRes;
+
+  static equals(a: GetTxoStatsRes | PlainMessage<GetTxoStatsRes> | undefined, b: GetTxoStatsRes | PlainMessage<GetTxoStatsRes> | undefined): boolean;
+}
+
+/**
+ * Request type for NetworkMetricsService:getBlockchainSizeStats
+ *
+ * @generated from message co.topl.genus.services.BlockchainSizeStatsReq
+ */
+export declare class BlockchainSizeStatsReq extends Message<BlockchainSizeStatsReq> {
+  constructor(data?: PartialMessage<BlockchainSizeStatsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockchainSizeStatsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockchainSizeStatsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockchainSizeStatsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockchainSizeStatsReq;
+
+  static equals(a: BlockchainSizeStatsReq | PlainMessage<BlockchainSizeStatsReq> | undefined, b: BlockchainSizeStatsReq | PlainMessage<BlockchainSizeStatsReq> | undefined): boolean;
+}
+
+/**
+ * Response type for NetworkMetricsService:getBlockchainSizeStats
+ *
+ * @generated from message co.topl.genus.services.BlockchainSizeStatsRes
+ */
+export declare class BlockchainSizeStatsRes extends Message<BlockchainSizeStatsRes> {
+  /**
+   * @generated from field: co.topl.genus.services.BlockchainSizeStats blockchainSize = 1;
+   */
+  blockchainSize?: BlockchainSizeStats;
+
+  constructor(data?: PartialMessage<BlockchainSizeStatsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockchainSizeStatsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockchainSizeStatsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockchainSizeStatsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockchainSizeStatsRes;
+
+  static equals(a: BlockchainSizeStatsRes | PlainMessage<BlockchainSizeStatsRes> | undefined, b: BlockchainSizeStatsRes | PlainMessage<BlockchainSizeStatsRes> | undefined): boolean;
+}
+
+/**
+ * Request type for NetworkMetricsService:getBlockStats
+ *
+ * @generated from message co.topl.genus.services.BlockStatsReq
+ */
+export declare class BlockStatsReq extends Message<BlockStatsReq> {
+  constructor(data?: PartialMessage<BlockStatsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockStatsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockStatsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockStatsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockStatsReq;
+
+  static equals(a: BlockStatsReq | PlainMessage<BlockStatsReq> | undefined, b: BlockStatsReq | PlainMessage<BlockStatsReq> | undefined): boolean;
+}
+
+/**
+ * Response type for NetworkMetricsService:getBlockStats
+ *
+ * @generated from message co.topl.genus.services.BlockStatsRes
+ */
+export declare class BlockStatsRes extends Message<BlockStatsRes> {
+  /**
+   * @generated from field: co.topl.genus.services.BlockStats blockStats = 1;
+   */
+  blockStats?: BlockStats;
+
+  constructor(data?: PartialMessage<BlockStatsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockStatsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockStatsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockStatsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockStatsRes;
+
+  static equals(a: BlockStatsRes | PlainMessage<BlockStatsRes> | undefined, b: BlockStatsRes | PlainMessage<BlockStatsRes> | undefined): boolean;
+}
+
+/**
+ * Response from CreateOnChainTransactionIndex request
+ *
+ * @generated from message co.topl.genus.services.CreateOnChainTransactionIndexResponse
+ */
+export declare class CreateOnChainTransactionIndexResponse extends Message<CreateOnChainTransactionIndexResponse> {
+  /**
+   * True if index was created.
+   *
+   * @generated from field: bool ok = 1;
+   */
+  ok: boolean;
+
+  constructor(data?: PartialMessage<CreateOnChainTransactionIndexResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.CreateOnChainTransactionIndexResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOnChainTransactionIndexResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOnChainTransactionIndexResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOnChainTransactionIndexResponse;
+
+  static equals(a: CreateOnChainTransactionIndexResponse | PlainMessage<CreateOnChainTransactionIndexResponse> | undefined, b: CreateOnChainTransactionIndexResponse | PlainMessage<CreateOnChainTransactionIndexResponse> | undefined): boolean;
+}
+
+/**
+ * Used to request TxOs by their associated lock address
+ *
+ * @generated from message co.topl.genus.services.QueryByLockAddressRequest
+ */
+export declare class QueryByLockAddressRequest extends Message<QueryByLockAddressRequest> {
+  /**
+   * Address of interest
+   *
+   * @generated from field: co.topl.brambl.models.LockAddress address = 1;
+   */
+  address?: LockAddress;
+
+  /**
+   * The default value for confidenceFactor is 0.9999999 (7 nines)
+   *
+   * @generated from field: co.topl.genus.services.ConfidenceFactor confidenceFactor = 2;
+   */
+  confidenceFactor?: ConfidenceFactor;
+
+  /**
+   * Filter by status
+   *
+   * @generated from field: co.topl.genus.services.TxoState state = 3;
+   */
+  state: TxoState;
+
+  constructor(data?: PartialMessage<QueryByLockAddressRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.QueryByLockAddressRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryByLockAddressRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryByLockAddressRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryByLockAddressRequest;
+
+  static equals(a: QueryByLockAddressRequest | PlainMessage<QueryByLockAddressRequest> | undefined, b: QueryByLockAddressRequest | PlainMessage<QueryByLockAddressRequest> | undefined): boolean;
+}
+
+/**
+ * Used to request TxOs by their asset type
+ *
+ * @generated from message co.topl.genus.services.QueryByAssetLabelRequest
+ */
+export declare class QueryByAssetLabelRequest extends Message<QueryByAssetLabelRequest> {
+  /**
+   * @generated from field: co.topl.genus.services.AssetLabel assetLabel = 1;
+   */
+  assetLabel?: AssetLabel;
+
+  /**
+   * The default value for confidenceFactor is 0.9999999 (7 nines)
+   *
+   * @generated from field: co.topl.genus.services.ConfidenceFactor confidenceFactor = 2;
+   */
+  confidenceFactor?: ConfidenceFactor;
+
+  constructor(data?: PartialMessage<QueryByAssetLabelRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.QueryByAssetLabelRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryByAssetLabelRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryByAssetLabelRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryByAssetLabelRequest;
+
+  static equals(a: QueryByAssetLabelRequest | PlainMessage<QueryByAssetLabelRequest> | undefined, b: QueryByAssetLabelRequest | PlainMessage<QueryByAssetLabelRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.TxoLockAddressResponse
+ */
+export declare class TxoLockAddressResponse extends Message<TxoLockAddressResponse> {
+  /**
+   * @generated from field: repeated co.topl.genus.services.Txo Txos = 1;
+   */
+  Txos: Txo[];
+
+  constructor(data?: PartialMessage<TxoLockAddressResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.TxoLockAddressResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TxoLockAddressResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TxoLockAddressResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TxoLockAddressResponse;
+
+  static equals(a: TxoLockAddressResponse | PlainMessage<TxoLockAddressResponse> | undefined, b: TxoLockAddressResponse | PlainMessage<TxoLockAddressResponse> | undefined): boolean;
+}
+
+/**
+ * A request to create an index of transactions based on their on-chain data
+ *
+ * @generated from message co.topl.genus.services.CreateOnChainTransactionIndexRequest
+ */
+export declare class CreateOnChainTransactionIndexRequest extends Message<CreateOnChainTransactionIndexRequest> {
+  /**
+   * @generated from field: co.topl.genus.services.IndexSpec indexSpec = 1;
+   */
+  indexSpec?: IndexSpec;
+
+  /**
+   * If populate is true, then scan the existing transaction in the database to populate the index.
+   *
+   * @generated from field: bool populate = 2;
+   */
+  populate: boolean;
+
+  constructor(data?: PartialMessage<CreateOnChainTransactionIndexRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.CreateOnChainTransactionIndexRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateOnChainTransactionIndexRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateOnChainTransactionIndexRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateOnChainTransactionIndexRequest;
+
+  static equals(a: CreateOnChainTransactionIndexRequest | PlainMessage<CreateOnChainTransactionIndexRequest> | undefined, b: CreateOnChainTransactionIndexRequest | PlainMessage<CreateOnChainTransactionIndexRequest> | undefined): boolean;
+}
+
+/**
+ * Used to request a group policy associated by groupId
+ *
+ * @generated from message co.topl.genus.services.QueryByGroupIdRequest
+ */
+export declare class QueryByGroupIdRequest extends Message<QueryByGroupIdRequest> {
+  /**
+   * GroupId of interest
+   *
+   * @generated from field: co.topl.brambl.models.GroupId groupId = 1;
+   */
+  groupId?: GroupId;
+
+  constructor(data?: PartialMessage<QueryByGroupIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.QueryByGroupIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryByGroupIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryByGroupIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryByGroupIdRequest;
+
+  static equals(a: QueryByGroupIdRequest | PlainMessage<QueryByGroupIdRequest> | undefined, b: QueryByGroupIdRequest | PlainMessage<QueryByGroupIdRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.GroupPolicyResponse
+ */
+export declare class GroupPolicyResponse extends Message<GroupPolicyResponse> {
+  /**
+   * @generated from field: co.topl.brambl.models.Event.GroupPolicy groupPolicy = 1;
+   */
+  groupPolicy?: Event_GroupPolicy;
+
+  constructor(data?: PartialMessage<GroupPolicyResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GroupPolicyResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GroupPolicyResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GroupPolicyResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GroupPolicyResponse;
+
+  static equals(a: GroupPolicyResponse | PlainMessage<GroupPolicyResponse> | undefined, b: GroupPolicyResponse | PlainMessage<GroupPolicyResponse> | undefined): boolean;
+}
+
+/**
+ * Used to request a series policy associated by seriesId
+ *
+ * @generated from message co.topl.genus.services.QueryBySeriesIdRequest
+ */
+export declare class QueryBySeriesIdRequest extends Message<QueryBySeriesIdRequest> {
+  /**
+   * GroupId of interest
+   *
+   * @generated from field: co.topl.brambl.models.SeriesId seriesId = 1;
+   */
+  seriesId?: SeriesId;
+
+  constructor(data?: PartialMessage<QueryBySeriesIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.QueryBySeriesIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryBySeriesIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryBySeriesIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryBySeriesIdRequest;
+
+  static equals(a: QueryBySeriesIdRequest | PlainMessage<QueryBySeriesIdRequest> | undefined, b: QueryBySeriesIdRequest | PlainMessage<QueryBySeriesIdRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.SeriesPolicyResponse
+ */
+export declare class SeriesPolicyResponse extends Message<SeriesPolicyResponse> {
+  /**
+   * @generated from field: co.topl.brambl.models.Event.SeriesPolicy seriesPolicy = 1;
+   */
+  seriesPolicy?: Event_SeriesPolicy;
+
+  constructor(data?: PartialMessage<SeriesPolicyResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.SeriesPolicyResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SeriesPolicyResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SeriesPolicyResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SeriesPolicyResponse;
+
+  static equals(a: SeriesPolicyResponse | PlainMessage<SeriesPolicyResponse> | undefined, b: SeriesPolicyResponse | PlainMessage<SeriesPolicyResponse> | undefined): boolean;
+}
+
+/**
+ * Definitions of existing database indexes.
+ *
+ * @generated from message co.topl.genus.services.IndexSpecs
+ */
+export declare class IndexSpecs extends Message<IndexSpecs> {
+  /**
+   * @generated from field: repeated co.topl.genus.services.IndexSpec indexSpec = 1;
+   */
+  indexSpec: IndexSpec[];
+
+  constructor(data?: PartialMessage<IndexSpecs>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.IndexSpecs";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IndexSpecs;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IndexSpecs;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IndexSpecs;
+
+  static equals(a: IndexSpecs | PlainMessage<IndexSpecs> | undefined, b: IndexSpecs | PlainMessage<IndexSpecs> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.IndexDef
+ */
+export declare class IndexDef extends Message<IndexDef> {
+  /**
+   * @generated from oneof co.topl.genus.services.IndexDef.xdev
+   */
+  xdev: {
+    /**
+     * @generated from field: co.topl.genus.services.CreateOnChainTransactionIndexRequest onChain = 1;
+     */
+    value: CreateOnChainTransactionIndexRequest;
+    case: "onChain";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<IndexDef>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.IndexDef";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IndexDef;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IndexDef;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IndexDef;
+
+  static equals(a: IndexDef | PlainMessage<IndexDef> | undefined, b: IndexDef | PlainMessage<IndexDef> | undefined): boolean;
+}
+
+/**
+ * The message that is sent when requesting information about the existing Genus indexes
+ *
+ * @generated from message co.topl.genus.services.GetExistingTransactionIndexesRequest
+ */
+export declare class GetExistingTransactionIndexesRequest extends Message<GetExistingTransactionIndexesRequest> {
+  constructor(data?: PartialMessage<GetExistingTransactionIndexesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetExistingTransactionIndexesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetExistingTransactionIndexesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetExistingTransactionIndexesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetExistingTransactionIndexesRequest;
+
+  static equals(a: GetExistingTransactionIndexesRequest | PlainMessage<GetExistingTransactionIndexesRequest> | undefined, b: GetExistingTransactionIndexesRequest | PlainMessage<GetExistingTransactionIndexesRequest> | undefined): boolean;
+}
+
+/**
+ * Specify the name of an index to be dropped
+ *
+ * @generated from message co.topl.genus.services.DropIndexRequest
+ */
+export declare class DropIndexRequest extends Message<DropIndexRequest> {
+  /**
+   * @generated from field: string indexName = 1;
+   */
+  indexName: string;
+
+  constructor(data?: PartialMessage<DropIndexRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.DropIndexRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DropIndexRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DropIndexRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DropIndexRequest;
+
+  static equals(a: DropIndexRequest | PlainMessage<DropIndexRequest> | undefined, b: DropIndexRequest | PlainMessage<DropIndexRequest> | undefined): boolean;
+}
+
+/**
+ * Return true if the requested index was dropped or false if it was not (Most likely because it did not exist).
+ *
+ * @generated from message co.topl.genus.services.DropIndexResponse
+ */
+export declare class DropIndexResponse extends Message<DropIndexResponse> {
+  /**
+   * @generated from field: bool dropped = 1;
+   */
+  dropped: boolean;
+
+  constructor(data?: PartialMessage<DropIndexResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.DropIndexResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DropIndexResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DropIndexResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DropIndexResponse;
+
+  static equals(a: DropIndexResponse | PlainMessage<DropIndexResponse> | undefined, b: DropIndexResponse | PlainMessage<DropIndexResponse> | undefined): boolean;
+}
+
+/**
+ * Request the use of a named index to find transactions containing data that matches specified values.
+ *
+ * @generated from message co.topl.genus.services.GetIndexedTransactionsRequest
+ */
+export declare class GetIndexedTransactionsRequest extends Message<GetIndexedTransactionsRequest> {
+  /**
+   * The name of the index to search
+   *
+   * @generated from field: string indexName = 1;
+   */
+  indexName: string;
+
+  /**
+   * The index value(s) to search for.
+   *
+   * @generated from field: repeated co.topl.genus.services.IndexMatchValue value = 2;
+   */
+  value: IndexMatchValue[];
+
+  /**
+   * The maximum number of transactions to be returned
+   *
+   * @generated from field: uint32 maxResults = 3;
+   */
+  maxResults: number;
+
+  /**
+   * A number of transactions to be skipped. This is useful for paging results.
+   *
+   * @generated from field: uint64 skipResults = 4;
+   */
+  skipResults: bigint;
+
+  constructor(data?: PartialMessage<GetIndexedTransactionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.GetIndexedTransactionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIndexedTransactionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIndexedTransactionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIndexedTransactionsRequest;
+
+  static equals(a: GetIndexedTransactionsRequest | PlainMessage<GetIndexedTransactionsRequest> | undefined, b: GetIndexedTransactionsRequest | PlainMessage<GetIndexedTransactionsRequest> | undefined): boolean;
+}
+
+/**
+ * A value that may match a field in an index.
+ *
+ * @generated from message co.topl.genus.services.IndexMatchValue
+ */
+export declare class IndexMatchValue extends Message<IndexMatchValue> {
+  /**
+   * @generated from oneof co.topl.genus.services.IndexMatchValue.value
+   */
+  value: {
+    /**
+     * @generated from field: string stringValue = 1;
+     */
+    value: string;
+    case: "stringValue";
+  } | {
+    /**
+     * @generated from field: int64 intValue = 2;
+     */
+    value: bigint;
+    case: "intValue";
+  } | {
+    /**
+     * @generated from field: uint64 uintValue = 3;
+     */
+    value: bigint;
+    case: "uintValue";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from field: google.protobuf.StringValue fieldName = 4;
+   */
+  fieldName?: string;
+
+  constructor(data?: PartialMessage<IndexMatchValue>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.IndexMatchValue";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): IndexMatchValue;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): IndexMatchValue;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): IndexMatchValue;
+
+  static equals(a: IndexMatchValue | PlainMessage<IndexMatchValue> | undefined, b: IndexMatchValue | PlainMessage<IndexMatchValue> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.TxoStats
+ */
+export declare class TxoStats extends Message<TxoStats> {
+  /**
+   * @generated from field: uint64 spent = 1;
+   */
+  spent: bigint;
+
+  /**
+   * @generated from field: uint64 unspent = 2;
+   */
+  unspent: bigint;
+
+  /**
+   * @generated from field: uint64 pending = 4;
+   */
+  pending: bigint;
+
+  /**
+   * @generated from field: uint64 total = 5;
+   */
+  total: bigint;
+
+  constructor(data?: PartialMessage<TxoStats>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.TxoStats";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TxoStats;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TxoStats;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TxoStats;
+
+  static equals(a: TxoStats | PlainMessage<TxoStats> | undefined, b: TxoStats | PlainMessage<TxoStats> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.BlockchainSizeStats
+ */
+export declare class BlockchainSizeStats extends Message<BlockchainSizeStats> {
+  /**
+   * Sum of BlockHeader immutable bytes
+   *
+   * @generated from field: uint64 blockHeaderBytes = 1;
+   */
+  blockHeaderBytes: bigint;
+
+  /**
+   * Sum of Transaction immutable bytes
+   *
+   * @generated from field: uint64 transactionBytes = 2;
+   */
+  transactionBytes: bigint;
+
+  constructor(data?: PartialMessage<BlockchainSizeStats>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockchainSizeStats";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockchainSizeStats;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockchainSizeStats;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockchainSizeStats;
+
+  static equals(a: BlockchainSizeStats | PlainMessage<BlockchainSizeStats> | undefined, b: BlockchainSizeStats | PlainMessage<BlockchainSizeStats> | undefined): boolean;
+}
+
+/**
+ * @generated from message co.topl.genus.services.BlockStats
+ */
+export declare class BlockStats extends Message<BlockStats> {
+  /**
+   * Sum of empty Blocks, total blocks without transactions in them
+   *
+   * @generated from field: uint64 empty = 1;
+   */
+  empty: bigint;
+
+  /**
+   * Sum of nonEmpty, total blocks with transactions in them
+   *
+   * @generated from field: uint64 nonEmpty = 2;
+   */
+  nonEmpty: bigint;
+
+  constructor(data?: PartialMessage<BlockStats>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "co.topl.genus.services.BlockStats";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BlockStats;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BlockStats;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BlockStats;
+
+  static equals(a: BlockStats | PlainMessage<BlockStats> | undefined, b: BlockStats | PlainMessage<BlockStats> | undefined): boolean;
 }
 
