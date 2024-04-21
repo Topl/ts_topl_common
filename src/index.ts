@@ -4,6 +4,7 @@
 
 //Brambl
 import * as address from '../proto/brambl/models/address_pb.d'
+import * as addressx from '../proto/brambl/models/address'
 import * as common from '../proto/brambl/models/common_pb.d'
 import * as datum from '../proto/brambl/models/datum_pb.d'
 import * as event from '../proto/brambl/models/event_pb.d'
@@ -55,6 +56,7 @@ import * as shared from '../proto/quivr/models/shared_pb.d'
 
 //Brambl
 export class LockAddress extends address.LockAddress {}
+export class LockAddressX extends addressx.LockAddress {}
 export class TransactionOutputAddress extends address.TransactionOutputAddress {}
 export class TransactionInputAddress extends address.TransactionInputAddress {}
 
