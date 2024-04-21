@@ -9,7 +9,7 @@ export interface FungibilityTypeMap {
   GROUP: 2;
 }
 
-export const FungibilityType: FungibilityTypeMap;
+// export const FungibilityType: FungibilityTypeMap;
 
 export interface QuantityDescriptorTypeMap {
   LIQUID: 0;
@@ -18,5 +18,5 @@ export interface QuantityDescriptorTypeMap {
   IMMUTABLE: 3;
 }
 
-export const QuantityDescriptorType: QuantityDescriptorTypeMap;
+// export const QuantityDescriptorType: QuantityDescriptorTypeMap;
 
