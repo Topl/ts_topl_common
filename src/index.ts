@@ -49,6 +49,14 @@ import * as proof from '../proto/quivr/models/proof_pb.d'
 import * as proposition from '../proto/quivr/models/proposition_pb.d'
 import * as shared from '../proto/quivr/models/shared_pb.d'
 
+// Google
+import * as googleWrappers from '../proto/google/protobuf/wrappers_pb.d'
+import * as googleStructs from '../proto/google/protobuf/struct_pb.d'
+
+
+
+
+
 /**
  * Exports
  */
@@ -300,4 +308,7 @@ export class TxBind extends shared.TxBind {}
 export class Int128 extends shared.Int128 {}
 export class Ratio extends shared.Ratio {}
 
+// google
+export class BytesValue extends googleWrappers.BytesValue {}
+export class Struct extends googleStructs.Struct {}
 
