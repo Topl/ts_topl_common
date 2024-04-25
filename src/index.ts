@@ -2,6 +2,9 @@
  * Imports
  */
 
+/// todo: DEBUG remove before beta
+export * as Debug from '../proto/brambl/models/box/value_pb'
+
 //Brambl
 import * as address from '../proto/brambl/models/address_pb'
 import * as common from '../proto/brambl/models/common_pb'
@@ -36,6 +39,7 @@ import * as staking from '../proto/consensus/models/staking_pb'
 //Genus
 import * as genus_models from '../proto/genus/genus_models_pb'
 import * as genus_rpc from '../proto/genus/genus_rpc_pb'
+export * from '../proto/genus/genus_rpc_connect'
 
 //Node
 import * as block from '../proto/node/models/block_pb'
@@ -43,6 +47,7 @@ import * as node_config from '../proto/node/models/node_config_pb'
 import * as node_epochData from '../proto/node/models/node_epochData_pb'
 import * as p2p from '../proto/node/models/p2p_pb'
 import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb'
+export * as bifrost_connect from '../proto/node/services/bifrost_rpc_connect'
 
 //Quivr
 import * as proof from '../proto/quivr/models/proof_pb'
@@ -52,9 +57,6 @@ import * as shared from '../proto/quivr/models/shared_pb'
 // Google
 import * as googleWrappers from '../proto/google/protobuf/wrappers_pb'
 import * as googleStructs from '../proto/google/protobuf/struct_pb'
-
-
-
 
 /**
  * Exports
@@ -70,14 +72,12 @@ export class ImmutableBytes extends common.ImmutableBytes {}
 // Datum subtypes
 export class Datum extends datum.Datum {}
 export class Datum_Eon extends datum.Datum_Eon {}
-export class Datum_Era extends datum.Datum_Era{}
+export class Datum_Era extends datum.Datum_Era {}
 export class Datum_Epoch extends datum.Datum_Epoch {}
 export class Datum_Header extends datum.Datum_Header {}
 export class Datum_IoTransaction extends datum.Datum_IoTransaction {}
 export class Datum_GroupPolicy extends datum.Datum_GroupPolicy {}
 export class Datum_SeriesPolicy extends datum.Datum_SeriesPolicy {}
-
-
 
 // Event subtypes
 export class Event extends event.Event {}
@@ -103,9 +103,9 @@ export class SeriesId extends identifier.SeriesId {}
 
 export class Indices extends indices.Indices {}
 
-export type FungibilityType = asset.FungibilityType;
+export type FungibilityType = asset.FungibilityType
 
-export type QuantityDescriptorType = asset.QuantityDescriptorType;
+export type QuantityDescriptorType = asset.QuantityDescriptorType
 
 export class AssetMintingStatement extends assets_statements.AssetMintingStatement {}
 
@@ -158,12 +158,12 @@ export class StakingRegistration extends staking.StakingRegistration {}
 export class ActiveStaker extends staking.ActiveStaker {}
 
 //Genus
-export type TxoState = genus_models.TxoState;
+export type TxoState = genus_models.TxoState
 export class Txo extends genus_models.Txo {}
-export type SortOrder = genus_models.SortOrder;
+export type SortOrder = genus_models.SortOrder
 export class ConfidenceFactor extends genus_models.ConfidenceFactor {}
 export class ChainDistance extends genus_models.ChainDistance {}
-export type LabelType = genus_models.LabelType;
+export type LabelType = genus_models.LabelType
 export class AssetLabel extends genus_models.AssetLabel {}
 export class IndexSpec extends genus_models.IndexSpec {}
 export class IndexFieldSpec extends genus_models.IndexFieldSpec {}
@@ -310,4 +310,3 @@ export class Ratio extends shared.Ratio {}
 // google
 export class BytesValue extends googleWrappers.BytesValue {}
 export class Struct extends googleStructs.Struct {}
-

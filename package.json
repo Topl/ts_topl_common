@@ -1,6 +1,6 @@
 {
   "name": "topl_common",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A TS library that is generated according to the [Topl Protobuf specification][https://github.com/Topl/protobuf-specs]  This also includes the files required to connect over gRPC to connect to a Bifrost node to send transactions, interact with addresses and much more!",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -30,6 +30,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@bufbuild/protobuf": "^1.9.0",
     "@grpc/grpc-js": "^1.9.9",
     "google-protobuf": "^3.21.2"
   }
