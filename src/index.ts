@@ -3,56 +3,55 @@
  */
 
 //Brambl
-import * as address from '../proto/brambl/models/address_pb.d'
-import * as common from '../proto/brambl/models/common_pb.d'
-import * as datum from '../proto/brambl/models/datum_pb.d'
-import * as event from '../proto/brambl/models/event_pb.d'
-import * as evidence from '../proto/brambl/models/evidence_pb.d'
-import * as identifier from '../proto/brambl/models/identifier_pb.d'
-import * as indices from '../proto/brambl/models/indices_pb.d'
+import * as address from '../proto/brambl/models/address_pb'
+import * as common from '../proto/brambl/models/common_pb'
+import * as datum from '../proto/brambl/models/datum_pb'
+import * as event from '../proto/brambl/models/event_pb'
+import * as evidence from '../proto/brambl/models/evidence_pb'
+import * as identifier from '../proto/brambl/models/identifier_pb'
+import * as indices from '../proto/brambl/models/indices_pb'
 // -> box
-import * as asset from '../proto/brambl/models/box/asset_pb.d'
-import * as assets_statements from '../proto/brambl/models/box/assets_statements_pb.d'
-import * as attestation from '../proto/brambl/models/box/attestation_pb.d'
-import * as box from '../proto/brambl/models/box/box_pb.d'
-import * as challenge from '../proto/brambl/models/box/challenge_pb.d'
-import * as lock from '../proto/brambl/models/box/lock_pb.d'
-import * as value from '../proto/brambl/models/box/value_pb.d'
+import * as asset from '../proto/brambl/models/box/asset_pb'
+import * as assets_statements from '../proto/brambl/models/box/assets_statements_pb'
+import * as attestation from '../proto/brambl/models/box/attestation_pb'
+import * as box from '../proto/brambl/models/box/box_pb'
+import * as challenge from '../proto/brambl/models/box/challenge_pb'
+import * as lock from '../proto/brambl/models/box/lock_pb'
+import * as value from '../proto/brambl/models/box/value_pb'
 // -> transaction
-import * as io_transaction from '../proto/brambl/models/transaction/io_transaction_pb.d'
-import * as schedule from '../proto/brambl/models/transaction/schedule_pb.d'
-import * as spent_transaction_output from '../proto/brambl/models/transaction/spent_transaction_output_pb.d'
-import * as unspent_transaction_output from '../proto/brambl/models/transaction/unspent_transaction_output_pb.d'
+import * as io_transaction from '../proto/brambl/models/transaction/io_transaction_pb'
+import * as schedule from '../proto/brambl/models/transaction/schedule_pb'
+import * as spent_transaction_output from '../proto/brambl/models/transaction/spent_transaction_output_pb'
+import * as unspent_transaction_output from '../proto/brambl/models/transaction/unspent_transaction_output_pb'
 
 //Consensus
-import * as block_header from '../proto/consensus/models/block_header_pb.d'
-import * as block_id from '../proto/consensus/models/block_id_pb.d'
-import * as eligibility_certificate from '../proto/consensus/models/eligibility_certificate_pb.d'
-import * as operational_certificate from '../proto/consensus/models/operational_certificate_pb.d'
-import * as protocol_version from '../proto/consensus/models/protocol_version_pb.d'
-import * as slot_data from '../proto/consensus/models/slot_data_pb.d'
-import * as staking from '../proto/consensus/models/staking_pb.d'
+import * as block_header from '../proto/consensus/models/block_header_pb'
+import * as block_id from '../proto/consensus/models/block_id_pb'
+import * as eligibility_certificate from '../proto/consensus/models/eligibility_certificate_pb'
+import * as operational_certificate from '../proto/consensus/models/operational_certificate_pb'
+import * as protocol_version from '../proto/consensus/models/protocol_version_pb'
+import * as slot_data from '../proto/consensus/models/slot_data_pb'
+import * as staking from '../proto/consensus/models/staking_pb'
 
 //Genus
-import * as genus_models from '../proto/genus/genus_models_pb.d'
-import * as genus_rpc from '../proto/genus/genus_rpc_pb.d'
+import * as genus_models from '../proto/genus/genus_models_pb'
+import * as genus_rpc from '../proto/genus/genus_rpc_pb'
 
 //Node
-import * as block from '../proto/node/models/block_pb.d'
-import * as node_config from '../proto/node/models/node_config_pb.d'
-import * as node_epochData from '../proto/node/models/node_epochData_pb.d'
-import * as p2p from '../proto/node/models/p2p_pb.d'
-import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb.d'
+import * as block from '../proto/node/models/block_pb'
+import * as node_config from '../proto/node/models/node_config_pb'
+import * as node_epochData from '../proto/node/models/node_epochData_pb'
+import * as p2p from '../proto/node/models/p2p_pb'
+import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb'
 
 //Quivr
-import * as proof from '../proto/quivr/models/proof_pb.d'
-import * as proposition from '../proto/quivr/models/proposition_pb.d'
-import * as shared from '../proto/quivr/models/shared_pb.d'
+import * as proof from '../proto/quivr/models/proof_pb'
+import * as proposition from '../proto/quivr/models/proposition_pb'
+import * as shared from '../proto/quivr/models/shared_pb'
 
 // Google
-import * as googleWrappers from '../proto/google/protobuf/wrappers_pb.d'
-import * as googleStructs from '../proto/google/protobuf/struct_pb.d'
-
+import * as googleWrappers from '../proto/google/protobuf/wrappers_pb'
+import * as googleStructs from '../proto/google/protobuf/struct_pb'
 
 
 
