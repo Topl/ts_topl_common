@@ -2,8 +2,8 @@
  * Imports
  */
 
-/// todo: DEBUG remove before beta
-export * as Debug from '../proto/brambl/models/box/value_pb'
+
+// TODO: move all basic imports to simple exports
 
 //Brambl
 import * as address from '../proto/brambl/models/address_pb'
@@ -39,7 +39,8 @@ import * as staking from '../proto/consensus/models/staking_pb'
 //Genus
 import * as genus_models from '../proto/genus/genus_models_pb'
 import * as genus_rpc from '../proto/genus/genus_rpc_pb'
-export * from '../proto/genus/genus_rpc_connect'
+// export * from '../proto/genus/genus_rpc_connect'
+// import * as genus_rpc_connect from '../proto/genus/genus_rpc_connect'
 
 //Node
 import * as block from '../proto/node/models/block_pb'
@@ -47,7 +48,8 @@ import * as node_config from '../proto/node/models/node_config_pb'
 import * as node_epochData from '../proto/node/models/node_epochData_pb'
 import * as p2p from '../proto/node/models/p2p_pb'
 import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb'
-export * as bifrost_connect from '../proto/node/services/bifrost_rpc_connect'
+// export * as bifrost_connect from '../proto/node/services/bifrost_rpc_connect'
+// import * as bifrost_rpc_connect from '../proto/node/services/bifrost_rpc_connect'
 
 //Quivr
 import * as proof from '../proto/quivr/models/proof_pb'
@@ -57,6 +59,7 @@ import * as shared from '../proto/quivr/models/shared_pb'
 // Google
 import * as googleWrappers from '../proto/google/protobuf/wrappers_pb'
 import * as googleStructs from '../proto/google/protobuf/struct_pb'
+import * as  googleDuration from '../proto/google/protobuf/duration_pb'
 
 /**
  * Exports
@@ -122,6 +125,7 @@ export class Attestation_Commitment extends attestation.Attestation_Commitment {
 export class Box extends box.Box {}
 
 export class Challenge extends challenge.Challenge {}
+export class Challenge_PreviousProposition extends challenge.Challenge_PreviousProposition {}
 
 // Lock subtypes
 export class Lock extends lock.Lock {}
@@ -136,6 +140,7 @@ export class Topl extends value.Value_TOPL {}
 export class Group extends value.Value_Group {}
 export class Series extends value.Value_Series {}
 export class Asset extends value.Value_Asset {}
+export class UpdateProposal extends value.Value_UpdateProposal {}
 
 export class IoTransaction extends io_transaction.IoTransaction {}
 export class Schedule extends schedule.Schedule {}
@@ -247,6 +252,7 @@ export class FetchNodeConfigRes extends bifrost_rpc.FetchNodeConfigRes {}
 export class FetchEpochDataReq extends bifrost_rpc.FetchEpochDataReq {}
 export class FetchEpochDataRes extends bifrost_rpc.FetchEpochDataRes {}
 
+
 //Quivr
 export class Proof extends proof.Proof {}
 export class Proof_And extends proof.Proof_And {}
@@ -310,3 +316,9 @@ export class Ratio extends shared.Ratio {}
 // google
 export class BytesValue extends googleWrappers.BytesValue {}
 export class Struct extends googleStructs.Struct {}
+export class Duration extends googleDuration.Duration {}
+
+
+/// service stuff
+export {NodeRpc}  from '../proto/node/services/bifrost_rpc_connect'
+export {BlockService}  from '../proto/genus/genus_rpc_connect'

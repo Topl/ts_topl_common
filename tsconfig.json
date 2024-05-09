@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "NodeNext",
     "esModuleInterop": true,
+    "declaration": true, // Will tell TS to emit .d.ts files, needed for autocomplete on .js files
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
+
     "outDir": "dist"
   },
   "include": ["src/**/*.ts"]
