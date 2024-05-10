@@ -2,65 +2,71 @@
  * Imports
  */
 
-
 // TODO: move all basic imports to simple exports
 
 //Brambl
-import * as address from '../proto/brambl/models/address_pb'
-import * as common from '../proto/brambl/models/common_pb'
-import * as datum from '../proto/brambl/models/datum_pb'
-import * as event from '../proto/brambl/models/event_pb'
-import * as evidence from '../proto/brambl/models/evidence_pb'
-import * as identifier from '../proto/brambl/models/identifier_pb'
-import * as indices from '../proto/brambl/models/indices_pb'
+import * as address from '../proto/brambl/models/address_pb.js'
+import * as common from '../proto/brambl/models/common_pb.js'
+import * as datum from '../proto/brambl/models/datum_pb.js'
+import * as event from '../proto/brambl/models/event_pb.js'
+import * as evidence from '../proto/brambl/models/evidence_pb.js'
+import * as identifier from '../proto/brambl/models/identifier_pb.js'
+import * as indices from '../proto/brambl/models/indices_pb.js'
 // -> box
-import * as asset from '../proto/brambl/models/box/asset_pb'
-import * as assets_statements from '../proto/brambl/models/box/assets_statements_pb'
-import * as attestation from '../proto/brambl/models/box/attestation_pb'
-import * as box from '../proto/brambl/models/box/box_pb'
-import * as challenge from '../proto/brambl/models/box/challenge_pb'
-import * as lock from '../proto/brambl/models/box/lock_pb'
-import * as value from '../proto/brambl/models/box/value_pb'
+import * as asset from '../proto/brambl/models/box/asset_pb.js'
+import * as assets_statements from '../proto/brambl/models/box/assets_statements_pb.js'
+import * as attestation from '../proto/brambl/models/box/attestation_pb.js'
+import * as box from '../proto/brambl/models/box/box_pb.js'
+import * as challenge from '../proto/brambl/models/box/challenge_pb.js'
+import * as lock from '../proto/brambl/models/box/lock_pb.js'
+import * as value from '../proto/brambl/models/box/value_pb.js'
 // -> transaction
-import * as io_transaction from '../proto/brambl/models/transaction/io_transaction_pb'
-import * as schedule from '../proto/brambl/models/transaction/schedule_pb'
-import * as spent_transaction_output from '../proto/brambl/models/transaction/spent_transaction_output_pb'
-import * as unspent_transaction_output from '../proto/brambl/models/transaction/unspent_transaction_output_pb'
+import * as io_transaction from '../proto/brambl/models/transaction/io_transaction_pb.js'
+import * as schedule from '../proto/brambl/models/transaction/schedule_pb.js'
+import * as spent_transaction_output from '../proto/brambl/models/transaction/spent_transaction_output_pb.js'
+import * as unspent_transaction_output from '../proto/brambl/models/transaction/unspent_transaction_output_pb.js'
 
 //Consensus
-import * as block_header from '../proto/consensus/models/block_header_pb'
-import * as block_id from '../proto/consensus/models/block_id_pb'
-import * as eligibility_certificate from '../proto/consensus/models/eligibility_certificate_pb'
-import * as operational_certificate from '../proto/consensus/models/operational_certificate_pb'
-import * as protocol_version from '../proto/consensus/models/protocol_version_pb'
-import * as slot_data from '../proto/consensus/models/slot_data_pb'
-import * as staking from '../proto/consensus/models/staking_pb'
+import * as block_header from '../proto/consensus/models/block_header_pb.js'
+import * as block_id from '../proto/consensus/models/block_id_pb.js'
+import * as eligibility_certificate from '../proto/consensus/models/eligibility_certificate_pb.js'
+import * as operational_certificate from '../proto/consensus/models/operational_certificate_pb.js'
+import * as protocol_version from '../proto/consensus/models/protocol_version_pb.js'
+import * as slot_data from '../proto/consensus/models/slot_data_pb.js'
+import * as staking from '../proto/consensus/models/staking_pb.js'
 
 //Genus
-import * as genus_models from '../proto/genus/genus_models_pb'
-import * as genus_rpc from '../proto/genus/genus_rpc_pb'
-// export * from '../proto/genus/genus_rpc_connect'
-// import * as genus_rpc_connect from '../proto/genus/genus_rpc_connect'
+import * as genus_models from '../proto/genus/genus_models_pb.js'
+import * as genus_rpc from '../proto/genus/genus_rpc_pb.js'
+// export * from '../proto/genus/genus_rpc_connect.js'
+// import * as genus_rpc_connect from '../proto/genus/genus_rpc_connect.js'
 
 //Node
-import * as block from '../proto/node/models/block_pb'
-import * as node_config from '../proto/node/models/node_config_pb'
-import * as node_epochData from '../proto/node/models/node_epochData_pb'
-import * as p2p from '../proto/node/models/p2p_pb'
-import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb'
-// export * as bifrost_connect from '../proto/node/services/bifrost_rpc_connect'
-// import * as bifrost_rpc_connect from '../proto/node/services/bifrost_rpc_connect'
+import * as block from '../proto/node/models/block_pb.js'
+import * as node_config from '../proto/node/models/node_config_pb.js'
+import * as node_epochData from '../proto/node/models/node_epochData_pb.js'
+import * as p2p from '../proto/node/models/p2p_pb.js'
+import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb.js'
+// export * as bifrost_connect from '../proto/node/services/bifrost_rpc_connect.js'
+// import * as bifrost_rpc_connect from '../proto/node/services/bifrost_rpc_connect.js'
 
 //Quivr
-import * as proof from '../proto/quivr/models/proof_pb'
-import * as proposition from '../proto/quivr/models/proposition_pb'
-import * as shared from '../proto/quivr/models/shared_pb'
+import * as proof from '../proto/quivr/models/proof_pb.js'
+import * as proposition from '../proto/quivr/models/proposition_pb.js'
+import * as shared from '../proto/quivr/models/shared_pb.js'
 
 // Google
-import * as googleWrappers from '../proto/google/protobuf/wrappers_pb'
-import * as googleStructs from '../proto/google/protobuf/struct_pb'
-import * as  googleDuration from '../proto/google/protobuf/duration_pb'
+import * as googleDuration from '../proto/google/protobuf/duration_pb.js'
+import * as googleStructs from '../proto/google/protobuf/struct_pb.js'
+import * as googleWrappers from '../proto/google/protobuf/wrappers_pb.js'
 
+export {
+    BlockService,
+    NetworkMetricsService,
+    TokenService,
+    TransactionService
+} from '../proto/genus/genus_rpc_connect.js'
+export { NodeRpc } from '../proto/node/services/bifrost_rpc_connect.js'
 /**
  * Exports
  */
@@ -107,8 +113,10 @@ export class SeriesId extends identifier.SeriesId {}
 export class Indices extends indices.Indices {}
 
 export type FungibilityType = asset.FungibilityType
+export const FungibilityTypeEnum = asset.FungibilityType
 
 export type QuantityDescriptorType = asset.QuantityDescriptorType
+export const QuantityDescriptorTypeEnum = asset.QuantityDescriptorType
 
 export class AssetMintingStatement extends assets_statements.AssetMintingStatement {}
 
@@ -164,11 +172,19 @@ export class ActiveStaker extends staking.ActiveStaker {}
 
 //Genus
 export type TxoState = genus_models.TxoState
+export const TxoStateEnum = genus_models.TxoState
+
 export class Txo extends genus_models.Txo {}
+
 export type SortOrder = genus_models.SortOrder
+export const SortOrderEnum = genus_models.SortOrder
+
 export class ConfidenceFactor extends genus_models.ConfidenceFactor {}
 export class ChainDistance extends genus_models.ChainDistance {}
+
 export type LabelType = genus_models.LabelType
+export const LabelTypeEnum = genus_models.LabelType
+
 export class AssetLabel extends genus_models.AssetLabel {}
 export class IndexSpec extends genus_models.IndexSpec {}
 export class IndexFieldSpec extends genus_models.IndexFieldSpec {}
@@ -252,7 +268,6 @@ export class FetchNodeConfigRes extends bifrost_rpc.FetchNodeConfigRes {}
 export class FetchEpochDataReq extends bifrost_rpc.FetchEpochDataReq {}
 export class FetchEpochDataRes extends bifrost_rpc.FetchEpochDataRes {}
 
-
 //Quivr
 export class Proof extends proof.Proof {}
 export class Proof_And extends proof.Proof_And {}
@@ -318,7 +333,4 @@ export class BytesValue extends googleWrappers.BytesValue {}
 export class Struct extends googleStructs.Struct {}
 export class Duration extends googleDuration.Duration {}
 
-
 /// service stuff
-export {NodeRpc}  from '../proto/node/services/bifrost_rpc_connect'
-export {BlockService}  from '../proto/genus/genus_rpc_connect'
