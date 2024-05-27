@@ -5,26 +5,19 @@
 // TODO: move all basic imports to simple exports
 
 //Brambl
-import * as address from '../proto/brambl/models/address_pb.js'
-import * as common from '../proto/brambl/models/common_pb.js'
-import * as datum from '../proto/brambl/models/datum_pb.js'
-import * as event from '../proto/brambl/models/event_pb.js'
-import * as evidence from '../proto/brambl/models/evidence_pb.js'
-import * as identifier from '../proto/brambl/models/identifier_pb.js'
-import * as indices from '../proto/brambl/models/indices_pb.js'
+// import * as address from '../proto/brambl/models/address_pb.js'
+// import * as common from '../proto/brambl/models/common_pb.js'
+// import * as datum from '../proto/brambl/models/datum_pb.js'
+// import * as event from '../proto/brambl/models/event_pb.js'
+// import * as evidence from '../proto/brambl/models/evidence_pb.js'
+// import * as identifier from '../proto/brambl/models/identifier_pb.js'
+// import * as indices from '../proto/brambl/models/indices_pb.js'
 // -> box
-import * as asset from '../proto/brambl/models/box/asset_pb.js'
-import * as assets_statements from '../proto/brambl/models/box/assets_statements_pb.js'
-import * as attestation from '../proto/brambl/models/box/attestation_pb.js'
-import * as box from '../proto/brambl/models/box/box_pb.js'
-import * as challenge from '../proto/brambl/models/box/challenge_pb.js'
-import * as lock from '../proto/brambl/models/box/lock_pb.js'
-import * as value from '../proto/brambl/models/box/value_pb.js'
 // -> transaction
-import * as io_transaction from '../proto/brambl/models/transaction/io_transaction_pb.js'
-import * as schedule from '../proto/brambl/models/transaction/schedule_pb.js'
-import * as spent_transaction_output from '../proto/brambl/models/transaction/spent_transaction_output_pb.js'
-import * as unspent_transaction_output from '../proto/brambl/models/transaction/unspent_transaction_output_pb.js'
+// import * as io_transaction from '../proto/brambl/models/transaction/io_transaction_pb.js'
+// import * as schedule from '../proto/brambl/models/transaction/schedule_pb.js'
+// import * as spent_transaction_output from '../proto/brambl/models/transaction/spent_transaction_output_pb.js'
+// import * as unspent_transaction_output from '../proto/brambl/models/transaction/unspent_transaction_output_pb.js'
 
 //Consensus
 import * as block_header from '../proto/consensus/models/block_header_pb.js'
@@ -36,7 +29,6 @@ import * as slot_data from '../proto/consensus/models/slot_data_pb.js'
 import * as staking from '../proto/consensus/models/staking_pb.js'
 
 //Genus
-import * as genus_models from '../proto/genus/genus_models_pb.js'
 import * as genus_rpc from '../proto/genus/genus_rpc_pb.js'
 // export * from '../proto/genus/genus_rpc_connect.js'
 // import * as genus_rpc_connect from '../proto/genus/genus_rpc_connect.js'
@@ -51,9 +43,6 @@ import * as bifrost_rpc from '../proto/node/services/bifrost_rpc_pb.js'
 // import * as bifrost_rpc_connect from '../proto/node/services/bifrost_rpc_connect.js'
 
 //Quivr
-import * as proof from '../proto/quivr/models/proof_pb.js'
-import * as proposition from '../proto/quivr/models/proposition_pb.js'
-import * as shared from '../proto/quivr/models/shared_pb.js'
 
 // Google
 import * as googleDuration from '../proto/google/protobuf/duration_pb.js'
@@ -72,88 +61,82 @@ export { NodeRpc } from '../proto/node/services/bifrost_rpc_connect.js'
  */
 
 //Brambl
-export class LockAddress extends address.LockAddress {}
-export class TransactionOutputAddress extends address.TransactionOutputAddress {}
-export class TransactionInputAddress extends address.TransactionInputAddress {}
-
-export class ImmutableBytes extends common.ImmutableBytes {}
+export { LockAddress, TransactionInputAddress, TransactionOutputAddress } from '../proto/brambl/models/address_pb.js'
+export { ImmutableBytes } from '../proto/brambl/models/common_pb.js'
 
 // Datum subtypes
-export class Datum extends datum.Datum {}
-export class Datum_Eon extends datum.Datum_Eon {}
-export class Datum_Era extends datum.Datum_Era {}
-export class Datum_Epoch extends datum.Datum_Epoch {}
-export class Datum_Header extends datum.Datum_Header {}
-export class Datum_IoTransaction extends datum.Datum_IoTransaction {}
-export class Datum_GroupPolicy extends datum.Datum_GroupPolicy {}
-export class Datum_SeriesPolicy extends datum.Datum_SeriesPolicy {}
+export {
+    Datum,
+    Datum_Eon, Datum_Epoch, Datum_Era, Datum_GroupPolicy, Datum_Header,
+    Datum_IoTransaction, Datum_SeriesPolicy
+} from '../proto/brambl/models/datum_pb.js'
 
 // Event subtypes
-export class Event extends event.Event {}
-export class Event_Eon extends event.Event_Eon {}
-export class Event_Era extends event.Event_Era {}
-export class Event_Epoch extends event.Event_Epoch {}
-export class Event_Header extends event.Event_Header {}
-export class Event_IoTransaction extends event.Event_IoTransaction {}
-export class Event_GroupPolicy extends event.Event_GroupPolicy {}
-export class Event_SeriesPolicy extends event.Event_SeriesPolicy {}
+export {
+    Event,
+    Event_Eon, Event_Epoch, Event_Era, Event_GroupPolicy, Event_Header,
+    Event_IoTransaction, Event_SeriesPolicy
+} from '../proto/brambl/models/event_pb.js'
 
-export class Evidence extends evidence.Evidence {}
+export { Evidence } from '../proto/brambl/models/evidence_pb.js'
+export { AccumulatorRootId, GroupId, LockId, SeriesId, TransactionId } from '../proto/brambl/models/identifier_pb.js'
+export { Indices } from '../proto/brambl/models/indices_pb.js'
 
-export class TransactionId extends identifier.TransactionId {}
+export {
+    FungibilityType,
+    QuantityDescriptorType
+} from '../proto/brambl/models/box/asset_pb.js'
 
-export class LockId extends identifier.LockId {}
+// export type FungibilityType = asset.FungibilityType
+// export const FungibilityTypeEnum = asset.FungibilityType
 
-export class AccumulatorRootId extends identifier.AccumulatorRootId {}
+// export type QuantityDescriptorType = asset.QuantityDescriptorType
+// export const QuantityDescriptorTypeEnum = asset.QuantityDescriptorType
 
-export class GroupId extends identifier.GroupId {}
-
-export class SeriesId extends identifier.SeriesId {}
-
-export class Indices extends indices.Indices {}
-
-export type FungibilityType = asset.FungibilityType
-export const FungibilityTypeEnum = asset.FungibilityType
-
-export type QuantityDescriptorType = asset.QuantityDescriptorType
-export const QuantityDescriptorTypeEnum = asset.QuantityDescriptorType
-
-export class AssetMintingStatement extends assets_statements.AssetMintingStatement {}
-
-export class AssetMergingStatement extends assets_statements.AssetMergingStatement {}
-
-export class AssetSplittingStatement extends assets_statements.AssetSplittingStatement {}
+export {
+    AssetMergingStatement,
+    AssetMintingStatement,
+    AssetSplittingStatement
+} from '../proto/brambl/models/box/assets_statements_pb.js'
 
 // Attestation subtypes
-export class Attestation extends attestation.Attestation {}
-export class Attestation_Predicate extends attestation.Attestation_Predicate {}
-export class Attestation_Image extends attestation.Attestation_Image {}
-export class Attestation_Commitment extends attestation.Attestation_Commitment {}
+export {
+    Attestation,
+    Attestation_Commitment,
+    Attestation_Image,
+    Attestation_Predicate
+} from '../proto/brambl/models/box/attestation_pb.js'
 
-export class Box extends box.Box {}
+export { Box } from '../proto/brambl/models/box/box_pb.js'
 
-export class Challenge extends challenge.Challenge {}
-export class Challenge_PreviousProposition extends challenge.Challenge_PreviousProposition {}
+export {
+    Challenge,
+    Challenge_PreviousProposition
+} from '../proto/brambl/models/box/challenge_pb.js'
 
 // Lock subtypes
-export class Lock extends lock.Lock {}
-export class Lock_Predicate extends lock.Lock_Predicate {}
-export class Lock_Image extends lock.Lock_Image {}
-export class Lock_Commitment extends lock.Lock_Commitment {}
+export {
+    Lock,
+    Lock_Commitment,
+    Lock_Image,
+    Lock_Predicate
+} from '../proto/brambl/models/box/lock_pb.js'
 
 // value subtypes
-export class Value extends value.Value {}
-export class Lvl extends value.Value_LVL {}
-export class Topl extends value.Value_TOPL {}
-export class Group extends value.Value_Group {}
-export class Series extends value.Value_Series {}
-export class Asset extends value.Value_Asset {}
-export class UpdateProposal extends value.Value_UpdateProposal {}
+export {
+    Value_Asset as Asset,
+    Value_Group as Group,
+    Value_LVL as Lvl,
+    Value_Series as Series,
+    Value_TOPL as Topl,
+    Value_UpdateProposal as UpdateProposal,
+    Value
+} from '../proto/brambl/models/box/value_pb.js'
 
-export class IoTransaction extends io_transaction.IoTransaction {}
-export class Schedule extends schedule.Schedule {}
-export class SpentTransactionOutput extends spent_transaction_output.SpentTransactionOutput {}
-export class UnspentTransactionOutput extends unspent_transaction_output.UnspentTransactionOutput {}
+export { IoTransaction } from '../proto/brambl/models/transaction/io_transaction_pb.js'
+export { Schedule } from '../proto/brambl/models/transaction/schedule_pb.js'
+export { SpentTransactionOutput } from '../proto/brambl/models/transaction/spent_transaction_output_pb.js'
+export { UnspentTransactionOutput } from '../proto/brambl/models/transaction/unspent_transaction_output_pb.js'
 
 //Consensus
 export class BlockHeader extends block_header.BlockHeader {}
@@ -171,31 +154,36 @@ export class StakingRegistration extends staking.StakingRegistration {}
 export class ActiveStaker extends staking.ActiveStaker {}
 
 //Genus
-export type TxoState = genus_models.TxoState
-export const TxoStateEnum = genus_models.TxoState
+// export type TxoState = genus_models.TxoState
+// export const TxoStateEnum = genus_models.TxoState
 
-export class Txo extends genus_models.Txo {}
+export {
+    AssetLabel,
+    BlockData,
+    ChainDistance,
+    ConfidenceFactor,
+    CsvIndexSpec,
+    CsvIndexSpecs,
+    HeightData,
+    IndexFieldSpec,
+    IndexFilter,
+    IndexSpec,
+    JsonIndexSpec,
+    JsonIndexSpecs,
+    LabelType,
+    SortOrder,
+    TransactionReceipt,
+    Txo,
+    TxoState
+} from '../proto/genus/genus_models_pb.js'
 
-export type SortOrder = genus_models.SortOrder
-export const SortOrderEnum = genus_models.SortOrder
+// export type SortOrder = genus_models.SortOrder
+// export const SortOrderEnum = genus_models.SortOrder
 
-export class ConfidenceFactor extends genus_models.ConfidenceFactor {}
-export class ChainDistance extends genus_models.ChainDistance {}
+// export type LabelType = genus_models.LabelType
+// export const LabelTypeEnum = genus_models.LabelType
 
-export type LabelType = genus_models.LabelType
-export const LabelTypeEnum = genus_models.LabelType
-
-export class AssetLabel extends genus_models.AssetLabel {}
-export class IndexSpec extends genus_models.IndexSpec {}
-export class IndexFieldSpec extends genus_models.IndexFieldSpec {}
-export class CsvIndexSpecs extends genus_models.CsvIndexSpecs {}
-export class CsvIndexSpec extends genus_models.CsvIndexSpec {}
-export class JsonIndexSpecs extends genus_models.JsonIndexSpecs {}
-export class JsonIndexSpec extends genus_models.JsonIndexSpec {}
-export class IndexFilter extends genus_models.IndexFilter {}
-export class TransactionReceipt extends genus_models.TransactionReceipt {}
-export class HeightData extends genus_models.HeightData {}
-export class BlockData extends genus_models.BlockData {}
+// genus rpc
 export class GetExistingTransactionIndexesResponse extends genus_rpc.GetExistingTransactionIndexesResponse {}
 export class BlockResponse extends genus_rpc.BlockResponse {}
 export class TransactionResponse extends genus_rpc.TransactionResponse {}
@@ -231,10 +219,10 @@ export class BlockchainSizeStats extends genus_rpc.BlockchainSizeStats {}
 export class BlockStats extends genus_rpc.BlockStats {}
 
 //Node
-export class BlockBody extends block.BlockBody {}
-export class FullBlockBody extends block.FullBlockBody {}
-export class Block extends block.Block {}
-export class FullBlock extends block.FullBlock {}
+export {
+    BlockBody, FullBlockBody, Block, FullBlock
+} from '../proto/node/models/block_pb.js'
+
 
 export class NodeConfig extends node_config.NodeConfig {}
 export class EpochData extends node_epochData.EpochData {}
@@ -269,64 +257,64 @@ export class FetchEpochDataReq extends bifrost_rpc.FetchEpochDataReq {}
 export class FetchEpochDataRes extends bifrost_rpc.FetchEpochDataRes {}
 
 //Quivr
-export class Proof extends proof.Proof {}
-export class Proof_And extends proof.Proof_And {}
-export class Proof_Or extends proof.Proof_Or {}
-export class Proof_Not extends proof.Proof_Not {}
-export class Proof_Threshold extends proof.Proof_Threshold {}
-export class Proof_EqualTo extends proof.Proof_EqualTo {}
-export class Proof_GreaterThan extends proof.Proof_GreaterThan {}
-export class Proof_LessThan extends proof.Proof_LessThan {}
-export class Proof_ExactMatch extends proof.Proof_ExactMatch {}
-export class Proof_TickRange extends proof.Proof_TickRange {}
-export class Proof_HeightRange extends proof.Proof_HeightRange {}
-export class Proof_DigitalSignature extends proof.Proof_DigitalSignature {}
-export class Proof_Digest extends proof.Proof_Digest {}
-export class Proof_Locked extends proof.Proof_Locked {}
+export {
+    Proof,
+    Proof_And,
+    Proof_Digest,
+    Proof_DigitalSignature,
+    Proof_EqualTo,
+    Proof_ExactMatch,
+    Proof_GreaterThan,
+    Proof_HeightRange,
+    Proof_LessThan,
+    Proof_Locked,
+    Proof_Not,
+    Proof_Or,
+    Proof_Threshold,
+    Proof_TickRange
+} from '../proto/quivr/models/proof_pb.js'
 
-export class Proposition extends proposition.Proposition {}
-export class Proposition_And extends proposition.Proposition_And {}
-export class Proposition_Or extends proposition.Proposition_Or {}
-export class Proposition_Not extends proposition.Proposition_Not {}
-export class Proposition_Threshold extends proposition.Proposition_Threshold {}
-export class Proposition_EqualTo extends proposition.Proposition_EqualTo {}
-export class Proposition_GreaterThan extends proposition.Proposition_GreaterThan {}
-export class Proposition_LessThan extends proposition.Proposition_LessThan {}
-export class Proposition_ExactMatch extends proposition.Proposition_ExactMatch {}
-export class Proposition_TickRange extends proposition.Proposition_TickRange {}
-export class Proposition_HeightRange extends proposition.Proposition_HeightRange {}
-export class Proposition_DigitalSignature extends proposition.Proposition_DigitalSignature {}
-export class Proposition_Digest extends proposition.Proposition_Digest {}
-export class Proposition_Locked extends proposition.Proposition_Locked {}
+export {
+    Proposition,
+    Proposition_And,
+    Proposition_Digest,
+    Proposition_DigitalSignature,
+    Proposition_EqualTo,
+    Proposition_ExactMatch,
+    Proposition_GreaterThan,
+    Proposition_HeightRange,
+    Proposition_LessThan,
+    Proposition_Locked,
+    Proposition_Not,
+    Proposition_Or,
+    Proposition_Threshold,
+    Proposition_TickRange
+} from '../proto/quivr/models/proposition_pb.js'
 
-export class Data extends shared.Data {}
-
-export class SmallData extends shared.SmallData {}
-
-export class Root extends shared.Root {}
-
-export class Preimage extends shared.Preimage {}
-
-export class Digest extends shared.Digest {}
-export class DigestVerification extends shared.DigestVerification {}
-
-export class VerificationKey extends shared.VerificationKey {}
-export class Ed25519Vk extends shared.VerificationKey_Ed25519Vk {}
-export class ExtendedEd25519Vk extends shared.VerificationKey_ExtendedEd25519Vk {}
-
-export class SigningKey extends shared.SigningKey {}
-export class Ed25519Sk extends shared.SigningKey_Ed25519Sk {}
-export class ExtendedEd25519Sk extends shared.SigningKey_ExtendedEd25519Sk {}
-
-export class KeyPair extends shared.KeyPair {}
-
-export class Message extends shared.Message {}
-export class Witness extends shared.Witness {}
-export class SignatureVerification extends shared.SignatureVerification {}
-export class SignableBytes extends shared.SignableBytes {}
-export class TxBind extends shared.TxBind {}
-export class Int128 extends shared.Int128 {}
-export class Ratio extends shared.Ratio {}
+/// shared
+export {
+    Int128,
+    Data,
+    Digest,
+    DigestVerification,
+    SigningKey_Ed25519Sk as Ed25519Sk,
+    VerificationKey_Ed25519Vk as Ed25519Vk,
+    SigningKey_ExtendedEd25519Sk as ExtendedEd25519Sk,
+    VerificationKey_ExtendedEd25519Vk as ExtendedEd25519Vk,
+    KeyPair,
+    Message,
+    Preimage,
+    Ratio,
+    Root,
+    SignableBytes,
+    SignatureVerification,
+    SigningKey,
+    SmallData,
+    TxBind,
+    VerificationKey,
+    Witness,
+    
+} from '../proto/quivr/models/shared_pb.js'
 
 // google
 export class BytesValue extends googleWrappers.BytesValue {}
